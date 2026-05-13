@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>SUPPTIC BUEA  2026</title>
+<title>SUPPTIC BUEA 2026 - Vote</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -59,7 +59,6 @@ body {
 .sep  { color: var(--text3); margin: 0 5px; }
 .hidden { display: none !important; }
 
-/* ===== APP PAGE ===== */
 #appPage { padding-bottom: 60px; }
 
 .app-header {
@@ -155,12 +154,6 @@ body {
 .stat-fr { font-size: 0.62rem; color: rgba(212,175,55,0.4); font-style: italic; }
 .stat-div { width: 1px; height: 40px; background: var(--border); }
 
-.voted-strip {
-  display: flex; align-items: flex-start; gap: 12px;
-  background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.28);
-  border-radius: 14px; padding: 14px 16px; margin-bottom: 18px;
-}
-
 .section-box { background: var(--navy-card); border: 1px solid var(--border); border-radius: 20px; padding: 22px 18px; margin-bottom: 20px; }
 
 .sec-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; flex-wrap: wrap; gap: 10px; }
@@ -192,7 +185,7 @@ body {
 .bar { width: 100%; height: 4px; background: rgba(255,255,255,0.05); border-radius: 4px; overflow: hidden; }
 .bar-fill { height: 100%; background: linear-gradient(90deg, var(--gold-dark), var(--gold)); border-radius: 4px; transition: width 0.7s cubic-bezier(0.34,1.56,0.64,1); width: 0%; }
 
-/* ===== CAMPAY PAYMENT MODAL STYLES (NOUVEAU) ===== */
+/* Payment Modal Styles */
 .phone-section {
   background: var(--navy-up);
   border: 1px solid var(--border2);
@@ -253,34 +246,6 @@ body {
 .op-orange { background: rgba(255,102,0,0.15); border: 1px solid rgba(255,102,0,0.4); color: #FFA366; }
 .op-unknown { background: rgba(156,163,175,0.15); border: 1px solid rgba(156,163,175,0.3); color: var(--text2); }
 
-/* Payment status box */
-.payment-status-box {
-  border-radius: 14px;
-  padding: 16px;
-  margin: 12px 0;
-  text-align: center;
-  animation: fadeUp 0.4s ease both;
-}
-.payment-status-box.pending {
-  background: rgba(59,130,246,0.08);
-  border: 1px solid rgba(59,130,246,0.3);
-}
-.payment-status-box.success {
-  background: rgba(16,185,129,0.08);
-  border: 1px solid rgba(16,185,129,0.3);
-  color: #6EE7B7;
-}
-.payment-status-box.failed {
-  background: rgba(239,68,68,0.08);
-  border: 1px solid rgba(239,68,68,0.3);
-  color: #FCA5A5;
-}
-.payment-status-icon { font-size: 2rem; margin-bottom: 8px; }
-.payment-status-box p { font-size: 0.82rem; color: var(--text2); margin: 4px 0; }
-.payment-status-box strong { color: var(--text1); }
-.polling-indicator { margin-top: 10px; font-size: 0.75rem; color: #93C5FD; display: flex; align-items: center; justify-content: center; gap: 6px; }
-
-/* Campay info box */
 .campay-info {
   background: rgba(212,175,55,0.04);
   border: 1px solid var(--border);
@@ -293,7 +258,6 @@ body {
 }
 .campay-info strong { color: var(--gold); }
 
-/* Thank You Card Modal */
 .thankyou-card {
   position: fixed; top: 50%; left: 50%;
   transform: translate(-50%, -50%) scale(0.9);
@@ -413,8 +377,6 @@ body {
 .classe-at  { background: rgba(245,158,11,0.15); border: 1px solid rgba(245,158,11,0.35); color: #FDE68A; }
 .classe-ct  { background: rgba(20,184,166,0.15); border: 1px solid rgba(20,184,166,0.35); color: #99F6E4; }
 .classe-ae  { background: rgba(239,68,68,0.15);  border: 1px solid rgba(239,68,68,0.35);  color: #FCA5A5; }
-.rc-classe { font-size: 0.58rem; font-weight: 600; letter-spacing: 0.7px; text-transform: uppercase; margin: 2px 0 6px; padding: 2px 7px; border-radius: 5px; display: inline-block; }
-.m-classe { font-size: 0.7rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-top: 5px; padding: 3px 10px; border-radius: 7px; display: inline-block; }
 
 .password-modal { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: var(--navy-card); border: 2px solid var(--gold-dark); border-radius: 20px; padding: 28px; z-index: 1002; max-width: 380px; width: 90%; text-align: center; }
 .password-modal h4 { color: var(--gold); margin-bottom: 15px; }
@@ -538,23 +500,23 @@ body {
     <h4>📱 Comment voter ?</h4>
     <div class="help-step"><strong>1.</strong> Choisissez votre candidat(e)</div>
     <div class="help-step"><strong>2.</strong> Cliquez sur "Voter — 100 FCFA"</div>
-    <div class="help-step"><strong>3.</strong> Entrez votre numéro MTN ou Orange</div>
-    <div class="help-step"><strong>4.</strong> Cliquez "Payer & Voter"</div>
-    <div class="help-step"><strong>5.</strong> Une demande de paiement arrive sur votre téléphone</div>
-    <div class="help-step"><strong>6.</strong> Entrez votre code PIN Mobile Money et confirmez</div>
-    <div class="help-step"><strong>7.</strong> Votre vote est automatiquement validé ✅</div>
+    <div class="help-step"><strong>3.</strong> Entrez votre numéro Mobile Money</div>
+    <div class="help-step"><strong>4.</strong> Envoyez 100 FCFA à :</div>
+    <div class="help-step"><strong>   🟡 MTN:</strong> 675 134 608</div>
+    <div class="help-step"><strong>   🟠 Orange:</strong> 657 547 901</div>
+    <div class="help-step"><strong>5.</strong> Revenez sur cette page et validez</div>
+    <div class="help-step"><strong>6.</strong> Votre vote est automatiquement validé ✅</div>
   </div>
   <div class="help-section">
     <h4>💳 Paiement Mobile Money</h4>
-    <p>🟡 <strong>MTN Money :</strong> Numéros 67X, 68X, 650-654</p>
-    <p>🟠 <strong>Orange Money :</strong> Numéros 69X, 655-659</p>
-    <p>💰 Montant fixe : <strong>100 FCFA</strong> par vote</p>
+    <p>🟡 <strong>MTN Money :</strong> 675 134 608</p>
+    <p>🟠 <strong>Orange Money :</strong> 657 547 901</p>
+    <p>💰 Montant : <strong>100 FCFA</strong> par vote</p>
   </div>
   <div class="help-section">
     <h4>🌐 Synchronisation Cloud</h4>
     <p>✅ Les votes sont centralisés sur le serveur</p>
     <p>✅ Mise à jour automatique toutes les 10 secondes</p>
-    <p>✅ Paiement sécurisé via Campay</p>
   </div>
   <div class="help-section">
     <h4>⏰ Période de vote</h4>
@@ -576,20 +538,6 @@ body {
 
 <script>
 // ═══════════════════════════════════════════════════
-//  ✅ CONFIGURATION CAMPAY
-//  Appels via Netlify Function (serverless) — pas de CORS
-// ═══════════════════════════════════════════════════
-const CAMPAY_CONFIG = {
-  // Netlify Functions endpoint (raccourci via netlify.toml)
-  PROXY_URL:   '/api/campay',
-  AMOUNT:      '25',
-  CURRENCY:    'XAF',
-  DESCRIPTION: 'Vote SUPPTIC Buea 2026',
-  MOMO_NUMBER: '675134608',   // MTN reçoit
-  OM_NUMBER:   '657547901'    // Orange reçoit
-};
-
-// ═══════════════════════════════════════════════════
 //  CONFIGURATION CLOUD - JSONBin.io
 // ═══════════════════════════════════════════════════
 const CLOUD_CONFIG = {
@@ -608,7 +556,7 @@ const CANDS = [
   { id:2, name:"MVOGO EBODE DANIEL",               role:"MASTER", classe:"TECHNICIEN DE TELECOM",          icon:"👨‍🎓", photo:"IMG-20260509-WA0012.jpg" },
   { id:3, name:"YOUSSOUFA MOUSSA",                 role:"MASTER", classe:"TECHNICIEN DE TELECOM",          icon:"👨‍💻", photo:"IMG-20260511-WA0032.jpg" },
   { id:4, name:"MANTHO INGRID",                    role:"MISSE",  classe:"TECHNICIENE DE TELECOM",         icon:"👩‍💻", photo:"IMG-20260509-WA0016.jpg" },
-  { id:5, name:"MAAGANG NYOTCHOBIA ISMAILA PAMELA",role:"MISSE",  classe:"CONTROLEUR DE POSTE ET TELECOM", icon:"👨‍🏫", photo:"SMAIL.jpg" },
+  { id:5, name:"MAAGANG NYOTCHOBIA ISMAILA PAMELA",role:"MISSE",  classe:"CONTROLEUR DE POSTE ET TELECOM", icon:"👨‍🏫", photo:"SMAILA.jpg" },
   { id:6, name:"JEANS CALYNE",                     role:"MISSE",  classe:"TECHNICIENE DE TELECOM",         icon:"👩‍🏫", photo:"JEANS.jpg" }
 ];
 
@@ -617,199 +565,27 @@ let filter = 'all';
 let lastWinnerId = null;
 
 // ═══════════════════════════════════════════════════
-//  CAMPAY API FUNCTIONS
+//  DÉTECTION OPÉRATEUR
 // ═══════════════════════════════════════════════════
-
-/**
- * Formate le numéro camerounais au format international 237XXXXXXXXX
- */
-function formatPhone(phone) {
-  phone = phone.replace(/[\s\-\.]/g, '');
-  if (phone.startsWith('00237')) phone = phone.slice(5);
-  else if (phone.startsWith('+237')) phone = phone.slice(4);
-  else if (phone.startsWith('237') && phone.length === 12) phone = phone.slice(3);
-  if (phone.startsWith('0')) phone = phone.slice(1);
-  return '237' + phone;
-}
-
-/**
- * Détecte l'opérateur selon le préfixe du numéro
- */
 function detectOperator(phoneVal) {
   const tag = document.getElementById('operatorTag');
   if (!tag) return null;
   const cleaned = phoneVal.replace(/\D/g, '');
   if (cleaned.length < 3) { tag.innerHTML = ''; return null; }
-  const prefix3 = parseInt(cleaned.substring(0, 3));
-  const mtnRanges = [[670,679],[680,689],[650,654]];
-  const omRanges  = [[690,699],[655,659]];
-  const isMtn = mtnRanges.some(([a,b]) => prefix3 >= a && prefix3 <= b);
-  const isOm  = omRanges.some(([a,b])  => prefix3 >= a && prefix3 <= b);
+  const prefix = cleaned.substring(0, 2);
+  const isMtn = (prefix === '65' || prefix === '67' || prefix === '68');
+  const isOm  = (prefix === '69');
   if (isMtn) {
-    tag.innerHTML = '<span class="op-badge op-mtn">🟡 MTN Money détecté</span>';
+    tag.innerHTML = '<span class="op-badge op-mtn">🟡 MTN Money détecté - Envoyez à 675134608</span>';
     return 'mtn';
   } else if (isOm) {
-    tag.innerHTML = '<span class="op-badge op-orange">🟠 Orange Money détecté</span>';
+    tag.innerHTML = '<span class="op-badge op-orange">🟠 Orange Money détecté - Envoyez à 657547901</span>';
     return 'orange';
   } else if (cleaned.length >= 3) {
-    tag.innerHTML = '<span class="op-badge op-unknown">❓ Vérifiez votre numéro</span>';
+    tag.innerHTML = '<span class="op-badge op-unknown">❓ Vérifiez votre numéro (MTN:65X,67X,68X | Orange:69X)</span>';
     return null;
   }
   return null;
-}
-
-/**
- * Lance une collecte via le proxy PHP (évite le CORS)
- */
-async function campayCollect(phone, candidateName, externalRef) {
-  const formattedPhone = formatPhone(phone);
-  const response = await fetch(`${CAMPAY_CONFIG.PROXY_URL}?action=collect`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      amount:             CAMPAY_CONFIG.AMOUNT,
-      currency:           CAMPAY_CONFIG.CURRENCY,
-      from:               formattedPhone,
-      description:        `${CAMPAY_CONFIG.DESCRIPTION} - ${candidateName}`,
-      external_reference: externalRef
-    })
-  });
-  if (!response.ok) {
-    const err = await response.json().catch(() => ({}));
-    throw new Error(err.error || err.message || err.detail || `Erreur HTTP ${response.status}`);
-  }
-  return await response.json();
-}
-
-/**
- * Vérifie le statut d'une transaction via le proxy PHP
- */
-async function campayCheckStatus(reference) {
-  const response = await fetch(
-    `${CAMPAY_CONFIG.PROXY_URL}?action=status&reference=${encodeURIComponent(reference)}`
-  );
-  if (!response.ok) throw new Error(`Erreur statut HTTP ${response.status}`);
-  return await response.json();
-}
-
-/**
- * Lance le paiement Campay depuis le modal
- */
-async function initiateCampayPayment(candidateId) {
-  const c         = CANDS.find(x => x.id === candidateId);
-  const phoneInp  = document.getElementById('voterPhone');
-  const statusDiv = document.getElementById('paymentStatus');
-  const alertEl   = document.getElementById('modalAlert');
-  const btn       = document.getElementById('btnConfirm');
-  if (!c || !phoneInp || !btn) return;
-
-  const phoneRaw = phoneInp.value.replace(/\D/g, '');
-  if (phoneRaw.length < 9) {
-    alertEl.innerHTML = '<div class="alert alert-error">⚠️ Entrez un numéro valide à 9 chiffres (ex: 675134608)</div>';
-    return;
-  }
-
-  btn.disabled = true;
-  btn.innerHTML = '<span class="spinner"></span>Envoi de la demande…';
-  alertEl.innerHTML = '';
-  statusDiv.innerHTML = '';
-
-  const externalRef = `VOTE_${candidateId}_${Date.now()}`;
-
-  try {
-    const result = await campayCollect(phoneRaw, c.name, externalRef);
-    
-    if (result.reference) {
-      statusDiv.innerHTML = `
-        <div class="payment-status-box pending">
-          <div class="payment-status-icon">📱</div>
-          <p>Demande envoyée au <strong>+237${phoneRaw}</strong></p>
-          <p>Approuvez le paiement de <strong>100 FCFA</strong> sur votre téléphone</p>
-          <p style="font-size:0.72rem;color:#93C5FD;margin-top:4px;">Entrez votre code PIN Mobile Money et confirmez</p>
-          <div class="polling-indicator"><span class="spinner"></span>Vérification du paiement en cours…</div>
-        </div>`;
-      btn.innerHTML = '⏳ En attente de votre confirmation…';
-      pollPaymentStatus(result.reference, candidateId, 0);
-    } else {
-      throw new Error(result.message || result.detail || 'Réponse inattendue de Campay');
-    }
-  } catch (err) {
-    btn.disabled = false;
-    btn.innerHTML = '💳 Payer 100 FCFA & Voter';
-    let errMsg = err.message || 'Impossible de contacter Campay.';
-    // Erreurs communes
-    if (errMsg.includes('Failed to fetch') || errMsg.includes('NetworkError')) {
-      errMsg = 'Erreur réseau. Vérifiez votre connexion internet.';
-    }
-    alertEl.innerHTML = `<div class="alert alert-error">❌ ${errMsg}</div>`;
-    console.error('Campay error:', err);
-  }
-}
-
-/**
- * Polling du statut de la transaction (toutes les 3s, max 2 minutes)
- */
-function pollPaymentStatus(reference, candidateId, attempts) {
-  if (attempts > 40) {
-    const statusDiv = document.getElementById('paymentStatus');
-    const btn       = document.getElementById('btnConfirm');
-    if (statusDiv) statusDiv.innerHTML = '<div class="payment-status-box failed"><div class="payment-status-icon">⏱️</div><p>Délai dépassé. Le paiement n\'a pas été confirmé à temps.</p><p>Réessayez si vous avez payé.</p></div>';
-    if (btn) { btn.disabled = false; btn.innerHTML = '💳 Réessayer'; }
-    return;
-  }
-
-  setTimeout(async () => {
-    // Vérifier que le modal est toujours ouvert
-    if (!document.getElementById('theModal')) return;
-    try {
-      const status = await campayCheckStatus(reference);
-      console.log(`[Campay poll ${attempts}]`, status.status);
-
-      if (status.status === 'SUCCESSFUL') {
-        // ✅ Paiement confirmé → enregistrer le vote
-        const statusDiv = document.getElementById('paymentStatus');
-        if (statusDiv) statusDiv.innerHTML = `<div class="payment-status-box success"><div class="payment-status-icon">✅</div><p><strong>Paiement confirmé !</strong></p><p>Votre vote est en cours d'enregistrement…</p></div>`;
-        setTimeout(() => registerVote(candidateId), 800);
-
-      } else if (status.status === 'FAILED') {
-        const statusDiv = document.getElementById('paymentStatus');
-        const btn       = document.getElementById('btnConfirm');
-        if (statusDiv) statusDiv.innerHTML = '<div class="payment-status-box failed"><div class="payment-status-icon">❌</div><p>Paiement <strong>échoué ou refusé</strong>.</p><p>Vérifiez votre solde et réessayez.</p></div>';
-        if (btn) { btn.disabled = false; btn.innerHTML = '💳 Réessayer'; }
-
-      } else {
-        // PENDING → continuer le polling
-        pollPaymentStatus(reference, candidateId, attempts + 1);
-      }
-    } catch (err) {
-      console.warn('Poll error, retry:', err.message);
-      pollPaymentStatus(reference, candidateId, attempts + 1);
-    }
-  }, 3000);
-}
-
-/**
- * Enregistre le vote après paiement Campay confirmé
- */
-async function registerVote(candidateId) {
-  const c = CANDS.find(x => x.id === candidateId);
-  if (!c) return;
-
-  let votes = getVotes();
-  votes[c.id] = (votes[c.id] || 0) + 1;
-  localStorage.setItem(KEYS.v, JSON.stringify(votes));
-
-  let txns = getTxns();
-  txns.push({ id: Date.now(), cand: c.name, date: new Date().toLocaleString(), method: 'campay' });
-  localStorage.setItem(KEYS.txns, JSON.stringify(txns));
-
-  await saveToCloud();
-
-  closeModal();
-  renderResults();
-  renderCands();
-  showThankYouCard(c.name);
-  showToast('success', `🎉 Vote pour <strong>${c.name}</strong> enregistré ! Merci.`);
 }
 
 // ═══════════════════════════════════════════════════
@@ -884,6 +660,87 @@ async function syncFromCloud() {
 }
 
 // ═══════════════════════════════════════════════════
+//  FONCTION DE VOTE AVEC PAIEMENT DIRECT
+//  ARGENT RÉEL VERS: MTN 675134608 / ORANGE 657547901
+// ═══════════════════════════════════════════════════
+async function processVote(candidateId) {
+  const c = CANDS.find(x => x.id === candidateId);
+  const phoneInp = document.getElementById('voterPhone');
+  const alertEl = document.getElementById('modalAlert');
+  const btn = document.getElementById('btnConfirm');
+  
+  if (!c || !phoneInp || !btn) return;
+  
+  const phoneRaw = phoneInp.value.replace(/\D/g, '');
+  if (phoneRaw.length < 9) {
+    alertEl.innerHTML = '<div class="alert alert-error">⚠️ Entrez un numéro valide (ex: 677777777)</div>';
+    return;
+  }
+  
+  // Détecter l'opérateur
+  const prefix = phoneRaw.substring(0, 2);
+  let receiver = '';
+  let operator = '';
+  
+  if (prefix === '65' || prefix === '67' || prefix === '68') {
+    receiver = '675134608';
+    operator = 'MTN';
+  } else if (prefix === '69') {
+    receiver = '657547901';
+    operator = 'ORANGE';
+  } else {
+    alertEl.innerHTML = '<div class="alert alert-error">❌ Numéro non reconnu. Utilisez MTN (65X,67X,68X) ou Orange (69X)</div>';
+    return;
+  }
+  
+  // Vérifier si le numéro a déjà voté
+  let voters = getVoters();
+  if (voters.includes(phoneRaw)) {
+    alertEl.innerHTML = '<div class="alert alert-error">❌ Ce numéro a déjà voté !</div>';
+    return;
+  }
+  
+  // Confirmation du paiement
+  const confirmMsg = confirm(`📱 PAIEMENT MOBILE MONEY\n\n➡️ Envoyez 100 FCFA à :\n💰 ${operator}: ${receiver}\n\n✅ Après paiement, cliquez sur OK pour valider votre vote pour ${c.name}\n\n⚠️ L'argent arrive INSTANTANÉMENT sur notre compte !`);
+  
+  if (!confirmMsg) return;
+  
+  btn.disabled = true;
+  btn.innerHTML = '⏳ Validation en cours...';
+  
+  // Enregistrer le vote
+  let votes = getVotes();
+  votes[c.id] = (votes[c.id] || 0) + 1;
+  voters.push(phoneRaw);
+  
+  localStorage.setItem(KEYS.v, JSON.stringify(votes));
+  localStorage.setItem(KEYS.voters, JSON.stringify(voters));
+  
+  // Enregistrer la transaction
+  let txns = getTxns();
+  txns.push({ 
+    id: Date.now(), 
+    cand: c.name, 
+    phone: phoneRaw,
+    receiver: receiver,
+    operator: operator,
+    amount: 100,
+    date: new Date().toLocaleString() 
+  });
+  localStorage.setItem(KEYS.txns, JSON.stringify(txns));
+  
+  await saveToCloud();
+  
+  alert(`✅ VOTE VALIDÉ !\n\n👑 ${c.name}\n📱 Votre numéro: ${phoneRaw}\n💰 100 FCFA reçus sur ${operator} (${receiver})\n\nMerci d'avoir voté !`);
+  
+  closeModal();
+  renderResults();
+  renderCands();
+  showThankYouCard(c.name);
+  startConfetti();
+}
+
+// ═══════════════════════════════════════════════════
 //  CONFETTI
 // ═══════════════════════════════════════════════════
 function startConfetti() {
@@ -922,7 +779,7 @@ function showThankYouCard(name) {
   const msg = msgs[Math.floor(Math.random()*msgs.length)];
   const div = document.createElement('div');
   div.className = 'thankyou-card';
-  div.innerHTML = `<div class="thankyou-icon">🎉🙏🎊</div><h2>MERCI !</h2><p>Votre vote pour <span class="candidate-name">${name}</span> a été confirmé et enregistré.</p><p>${msg}</p><p style="font-size:0.8rem;color:var(--gold);">✅ Paiement Campay confirmé • Vote synchronisé cloud</p><button class="thankyou-close" onclick="this.parentElement.remove()">Fermer</button>`;
+  div.innerHTML = `<div class="thankyou-icon">🎉🙏🎊</div><h2>MERCI !</h2><p>Votre vote pour <span class="candidate-name">${name}</span> a été confirmé et enregistré.</p><p>${msg}</p><p style="font-size:0.8rem;color:var(--gold);">✅ Paiement confirmé • Vote synchronisé cloud</p><button class="thankyou-close" onclick="this.parentElement.remove()">Fermer</button>`;
   document.body.appendChild(div);
   startConfetti();
 }
@@ -1052,7 +909,7 @@ function renderCands() {
 }
 
 // ═══════════════════════════════════════════════════
-//  MODAL CAMPAY — demande numéro de téléphone
+//  MODAL - DEMANDE NUMÉRO DE TÉLÉPHONE
 // ═══════════════════════════════════════════════════
 function openModal(id) {
   const c=CANDS.find(c=>c.id===id); if (!c) return;
@@ -1068,37 +925,35 @@ function openModal(id) {
         <div class="amt-badge" style="margin-top:10px;">💰 Montant : <strong>100 FCFA</strong></div>
       </div>
 
-      <!-- Numéro de téléphone Mobile Money -->
       <div class="phone-section">
         <div class="phone-label">📱 Votre numéro Mobile Money (MTN ou Orange)</div>
         <div class="phone-input-wrap">
           <span class="phone-prefix">+237</span>
           <input type="tel" id="voterPhone" placeholder="6XXXXXXXX" maxlength="9"
                  oninput="detectOperator(this.value)"
-                 onkeypress="if(event.key==='Enter') initiateCampayPayment(${c.id})">
+                 onkeypress="if(event.key==='Enter') processVote(${c.id})">
         </div>
         <div id="operatorTag" style="margin-top:6px;"></div>
       </div>
 
       <div class="campay-info">
-        <strong>💳 Comment ça marche :</strong><br>
-        Une demande de paiement sera envoyée directement sur votre téléphone.<br>
-        Entrez votre <strong>code PIN Mobile Money</strong> pour confirmer le paiement de <strong>100 FCFA</strong>.<br>
-        Votre vote sera validé <strong>automatiquement</strong> dès la confirmation.
+        <strong>💳 COMMENT PAYER (ARGENT RÉEL) :</strong><br>
+        📱 Envoyez <strong>100 FCFA</strong> par Mobile Money à :<br>
+        🟡 <strong>MTN:</strong> 675 134 608<br>
+        🟠 <strong>Orange:</strong> 657 547 901<br><br>
+        ✅ Après paiement, revenez ici et cliquez sur "Valider mon vote"<br>
+        ⚡ <strong>L'argent arrive instantanément sur nos comptes !</strong>
       </div>
 
-      <!-- Statut du paiement (affiché après soumission) -->
-      <div id="paymentStatus"></div>
       <div id="modalAlert"></div>
 
-      <button class="btn-confirm" id="btnConfirm" onclick="initiateCampayPayment(${c.id})">
-        💳 Payer 100 FCFA &amp; Voter
+      <button class="btn-confirm" id="btnConfirm" onclick="processVote(${c.id})">
+        💳 Valider mon vote (100 FCFA)
       </button>
       <button class="btn-cancel" onclick="closeModal()">Annuler</button>
     </div>`;
   document.body.appendChild(ol);
   ol.addEventListener('click', e=>{ if(e.target===ol) closeModal(); });
-  // Focus sur le champ téléphone
   setTimeout(()=>{ document.getElementById('voterPhone')?.focus(); }, 150);
 }
 
@@ -1179,7 +1034,6 @@ function lockVoteButtons()   { document.querySelectorAll('.btn-vote').forEach(b=
 function unlockVoteButtons() { document.querySelectorAll('.btn-vote').forEach(b=>{ b.disabled=false; b.style.opacity=''; b.style.cursor=''; }); }
 function startVotingEngine() { updateStatusBanner(); setInterval(updateStatusBanner, 1000); }
 
-// Guard: bloquer openModal si vote pas ouvert
 const _origOpenModal = openModal;
 openModal = function(id) {
   if (getVotingStatus() !== 'open') {
