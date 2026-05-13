@@ -1,0 +1,15 @@
+# ============================================================
+#  netlify.toml — Configuration Netlify pour SUPPTIC BUEA
+# ============================================================
+
+[build]
+  # Dossier racine de votre projet (là où se trouve votre HTML)
+  publish = "."
+  # Dossier des fonctions serverless
+  functions = "netlify/functions"
+
+# Redirection optionnelle pour raccourcir l'URL de la fonction
+[[redirects]]
+  from   = "/api/campay"
+  to     = "/.netlify/functions/campay"
+  status = 200
