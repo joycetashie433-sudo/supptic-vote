@@ -1,80 +1,36 @@
-// VERSION DÉMO - Sans paiement réel
-// À remplacer plus tard par le vrai Campay
-
-const CORS = {
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Headers': 'Content-Type',
-  'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-  'Content-Type': 'application/json'
-};
+const https = require('https');
+const CAMPAY_TOKEN = 'a7a9e5414bfc099fa9f48e64d334b18c6b5041e6';
+const CAMPAY_HOSTNAME = 'demo.campay.net';  // ✅ CHANGÉ : demo au lieu de api
+const CORS = {'Access-Control-Allow-Origin':'*','Access-Control-Allow-Headers':'Content-Type','Access-Control-Allow-Methods':'GET, POST, OPTIONS','Content-Type':'application/json'};
 
 exports.handler = async (event) => {
-  // Réponse pour les requêtes OPTIONS (CORS)
-  if (event.httpMethod === 'OPTIONS') {
-    return { statusCode: 200, headers: CORS, body: '' };
-  }
-
-  const params = event.queryStringParameters || {};
-  const action = params.action || '';
-
+  if (event.httpMethod === 'OPTIONS') return {statusCode:200,headers:CORS,body:''};
+  const p = event.queryStringParameters || {};
+  const action = p.action || '', ref = p.reference || '';
   try {
-    // Action COLLECT (paiement)
     if (action === 'collect') {
-      if (event.httpMethod !== 'POST') {
-        return { statusCode: 405, headers: CORS, body: JSON.stringify({ error: 'Méthode non autorisée' }) };
-      }
-
-      let data;
-      try {
-        data = JSON.parse(event.body);
-      } catch {
-        return { statusCode: 400, headers: CORS, body: JSON.stringify({ error: 'JSON invalide' }) };
-      }
-
-      if (!data.from || !data.amount) {
-        return { statusCode: 400, headers: CORS, body: JSON.stringify({ error: 'from et amount requis' }) };
-      }
-
-      // ✅ SIMULATION D'UN PAIEMENT RÉUSSI
-      // Dans la vraie version, on appellerait Campay ici
-      
-      const reference = 'DEMO_' + Date.now() + '_' + Math.random().toString(36).substr(2, 8);
-      
-      return {
-        statusCode: 200,
-        headers: CORS,
-        body: JSON.stringify({
-          status: 'SUCCESSFUL',  // Simule un paiement réussi
-          reference: reference,
-          message: 'Paiement simulé avec succès (version démo)',
-          operator: data.from.startsWith('65') || data.from.startsWith('67') ? 'MTN' : 'ORANGE',
-          amount: data.amount
-        })
-      };
+      if (event.httpMethod !== 'POST') return {statusCode:405,headers:CORS,body:JSON.stringify({error:'Méthode non autorisée'})};
+      let data; try {data=JSON.parse(event.body);}catch{return {statusCode:400,headers:CORS,body:JSON.stringify({error:'JSON invalide'})};}
+      if (!data.from||!data.amount) return {statusCode:400,headers:CORS,body:JSON.stringify({error:'from et amount requis'})};
+      const r = await req('/api/collect/','POST',event.body);
+      return {statusCode:r.code,headers:CORS,body:r.body};
     }
-
-    // Action STATUS (vérification)
     if (action === 'status') {
-      return {
-        statusCode: 200,
-        headers: CORS,
-        body: JSON.stringify({
-          status: 'SUCCESSFUL',
-          message: 'Transaction simulée'
-        })
-      };
+      if (!ref||!/^[a-zA-Z0-9_\-]+$/.test(ref)) return {statusCode:400,headers:CORS,body:JSON.stringify({error:'reference invalide'})};
+      const r = await req(`/api/transaction/${ref}/`,'GET');
+      return {statusCode:r.code,headers:CORS,body:r.body};
     }
-
-    return {
-      statusCode: 400,
-      headers: CORS,
-      body: JSON.stringify({ error: 'Action inconnue' })
-    };
-  } catch (e) {
-    return {
-      statusCode: 500,
-      headers: CORS,
-      body: JSON.stringify({ error: e.message })
-    };
-  }
+    return {statusCode:400,headers:CORS,body:JSON.stringify({error:'action inconnue'})};
+  } catch(e) {return {statusCode:500,headers:CORS,body:JSON.stringify({error:e.message})};}
 };
+
+function req(path,method,body=null){
+  return new Promise((resolve,reject)=>{
+    const bd=body?Buffer.from(body):null;
+    const o={hostname:CAMPAY_HOSTNAME,path,method,headers:{'Authorization':'Token '+CAMPAY_TOKEN,'Content-Type':'application/json','Accept':'application/json',...(bd?{'Content-Length':bd.length}:{})}};
+    const r=https.request(o,res=>{let d='';res.on('data',c=>d+=c);res.on('end',()=>resolve({code:res.statusCode,body:d}));});
+    r.on('error',e=>reject(new Error(e.message)));
+    r.setTimeout(25000,()=>{r.destroy();reject(new Error('Timeout'));});
+    if(bd)r.write(bd);r.end();
+  });
+}
