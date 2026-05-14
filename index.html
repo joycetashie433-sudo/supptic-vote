@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>SUPPTIC BUEA 2026 - Vote Miss & Master</title>
+<title>SUPPTIC BUEA  2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -59,6 +59,7 @@ body {
 .sep  { color: var(--text3); margin: 0 5px; }
 .hidden { display: none !important; }
 
+/* ===== APP PAGE ===== */
 #appPage { padding-bottom: 60px; }
 
 .app-header {
@@ -154,6 +155,12 @@ body {
 .stat-fr { font-size: 0.62rem; color: rgba(212,175,55,0.4); font-style: italic; }
 .stat-div { width: 1px; height: 40px; background: var(--border); }
 
+.voted-strip {
+  display: flex; align-items: flex-start; gap: 12px;
+  background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.28);
+  border-radius: 14px; padding: 14px 16px; margin-bottom: 18px;
+}
+
 .section-box { background: var(--navy-card); border: 1px solid var(--border); border-radius: 20px; padding: 22px 18px; margin-bottom: 20px; }
 
 .sec-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; flex-wrap: wrap; gap: 10px; }
@@ -185,39 +192,7 @@ body {
 .bar { width: 100%; height: 4px; background: rgba(255,255,255,0.05); border-radius: 4px; overflow: hidden; }
 .bar-fill { height: 100%; background: linear-gradient(90deg, var(--gold-dark), var(--gold)); border-radius: 4px; transition: width 0.7s cubic-bezier(0.34,1.56,0.64,1); width: 0%; }
 
-.filter-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
-.tab-btn { padding: 7px 16px; background: transparent; border: 1px solid var(--border); border-radius: 50px; cursor: pointer; }
-.tab-btn.active { background: rgba(212,175,55,0.12); border-color: var(--gold-dark); }
-.tab-btn.active .t-en, .tab-btn.active .t-fr { color: var(--gold); }
-
-.cands-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
-
-.cand-card { background: var(--navy-up); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; transition: all 0.2s; }
-.cand-card:hover { border-color: var(--border2); transform: translateY(-2px); }
-
-.cand-photo-wrap { width: 100%; height: 200px; overflow: hidden; position: relative; background: linear-gradient(155deg, rgba(212,175,55,0.08), rgba(10,15,30,0.9)); }
-.cand-photo-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; transition: transform 0.4s ease; }
-.cand-card:hover .cand-photo-wrap img { transform: scale(1.04); }
-.cand-photo-wrap .cand-no-photo { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 4rem; }
-.cand-role-badge { position: absolute; top: 10px; left: 10px; padding: 3px 10px; border-radius: 50px; font-size: 0.6rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
-.badge-master { background: rgba(59,130,246,0.7); border: 1px solid rgba(59,130,246,0.5); color: #E0EEFF; }
-.badge-misse  { background: rgba(236,72,153,0.7); border: 1px solid rgba(236,72,153,0.5); color: #FFE0F4; }
-
-.cand-body { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 10px; }
-.cand-name .t-en { font-weight: 700; font-size: 0.95rem; color: var(--text1); }
-
-.btn-vote { width: 100%; padding: 12px; background: linear-gradient(135deg, rgba(212,175,55,0.12), rgba(212,175,55,0.05)); border: 1px solid var(--border2); border-radius: var(--r); color: var(--gold); cursor: pointer; }
-.btn-vote:hover { background: linear-gradient(135deg,rgba(212,175,55,0.22),rgba(212,175,55,0.1)); }
-
-/* Modal */
-.modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.88); backdrop-filter: blur(8px); z-index: 999; display: flex; align-items: center; justify-content: center; padding: 16px; }
-.modal-box { background: var(--navy-card); border: 1px solid var(--border2); border-radius: 22px; padding: 30px 24px; max-width: 460px; width: 100%; max-height: 92vh; overflow-y: auto; position: relative; }
-.m-close { position: absolute; top: 14px; right: 14px; width: 30px; height: 30px; background: var(--navy-up); border: 1px solid var(--border); border-radius: 8px; cursor: pointer; }
-.m-head { text-align: center; margin-bottom: 20px; }
-.m-avatar { width: 72px; height: 72px; background: linear-gradient(135deg,rgba(212,175,55,0.2),rgba(212,175,55,0.04)); border: 2px solid var(--border2); border-radius: 16px; overflow: hidden; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 12px; }
-.m-avatar img { width:100%; height:100%; object-fit:cover; object-position:top; }
-.amt-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(212,175,55,0.1); border: 1px solid var(--border2); border-radius: 50px; padding: 5px 14px; margin-top: 10px; }
-
+/* ===== CAMPAY PAYMENT MODAL STYLES (NOUVEAU) ===== */
 .phone-section {
   background: var(--navy-up);
   border: 1px solid var(--border2);
@@ -276,7 +251,36 @@ body {
 }
 .op-mtn { background: rgba(255,204,0,0.15); border: 1px solid rgba(255,204,0,0.4); color: #FFE066; }
 .op-orange { background: rgba(255,102,0,0.15); border: 1px solid rgba(255,102,0,0.4); color: #FFA366; }
+.op-unknown { background: rgba(156,163,175,0.15); border: 1px solid rgba(156,163,175,0.3); color: var(--text2); }
 
+/* Payment status box */
+.payment-status-box {
+  border-radius: 14px;
+  padding: 16px;
+  margin: 12px 0;
+  text-align: center;
+  animation: fadeUp 0.4s ease both;
+}
+.payment-status-box.pending {
+  background: rgba(59,130,246,0.08);
+  border: 1px solid rgba(59,130,246,0.3);
+}
+.payment-status-box.success {
+  background: rgba(16,185,129,0.08);
+  border: 1px solid rgba(16,185,129,0.3);
+  color: #6EE7B7;
+}
+.payment-status-box.failed {
+  background: rgba(239,68,68,0.08);
+  border: 1px solid rgba(239,68,68,0.3);
+  color: #FCA5A5;
+}
+.payment-status-icon { font-size: 2rem; margin-bottom: 8px; }
+.payment-status-box p { font-size: 0.82rem; color: var(--text2); margin: 4px 0; }
+.payment-status-box strong { color: var(--text1); }
+.polling-indicator { margin-top: 10px; font-size: 0.75rem; color: #93C5FD; display: flex; align-items: center; justify-content: center; gap: 6px; }
+
+/* Campay info box */
 .campay-info {
   background: rgba(212,175,55,0.04);
   border: 1px solid var(--border);
@@ -289,16 +293,7 @@ body {
 }
 .campay-info strong { color: var(--gold); }
 
-.btn-confirm { width: 100%; padding: 14px; background: linear-gradient(135deg, #0f7a50, #10B981); color: white; border: none; border-radius: var(--r); cursor: pointer; font-size: 1rem; font-weight: 700; font-family: 'Outfit', sans-serif; transition: all 0.2s; }
-.btn-confirm:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 0 8px 20px rgba(16,185,129,0.3); }
-.btn-confirm:disabled { opacity: 0.6; cursor: not-allowed; }
-.btn-cancel { width: 100%; padding: 11px; background: transparent; border: 1px solid rgba(239,68,68,0.3); color: #FCA5A5; border-radius: var(--r); cursor: pointer; margin-top: 8px; font-family: 'Outfit', sans-serif; }
-
-.alert { padding: 12px 15px; border-radius: var(--r); font-size: 0.82rem; margin-bottom: 16px; animation: fadeUp 0.3s ease both; }
-.alert-error   { background: rgba(239,68,68,0.12); border: 1px solid rgba(239,68,68,0.3); color: #FCA5A5; }
-
-@keyframes fadeUp { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
-
+/* Thank You Card Modal */
 .thankyou-card {
   position: fixed; top: 50%; left: 50%;
   transform: translate(-50%, -50%) scale(0.9);
@@ -328,21 +323,116 @@ body {
   font-size: 0.7rem; padding: 4px 10px; border-radius: 20px;
   background: rgba(0,0,0,0.3);
 }
+.sync-status.online { background: rgba(16,185,129,0.2); color: #6EE7B7; }
+.sync-status.offline { background: rgba(239,68,68,0.2); color: #FCA5A5; }
 .sync-dot-live { width: 8px; height: 8px; border-radius: 50%; background: #10B981; animation: pulse 1.5s infinite; }
-@keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.4;} }
 
-.status-banner { border-radius: 18px; padding: 20px 20px 18px; margin-bottom: 20px; display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; }
-.status-open { background: linear-gradient(135deg, rgba(16,185,129,0.1), rgba(16,185,129,0.04)); border: 1px solid rgba(16,185,129,0.4); }
-.status-title { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: #6EE7B7; }
+.filter-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+.tab-btn { padding: 7px 16px; background: transparent; border: 1px solid var(--border); border-radius: 50px; cursor: pointer; }
+.tab-btn.active { background: rgba(212,175,55,0.12); border-color: var(--gold-dark); }
+.tab-btn.active .t-en, .tab-btn.active .t-fr { color: var(--gold); }
+
+.cands-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
+
+.cand-card { background: var(--navy-up); border: 1px solid var(--border); border-radius: 16px; overflow: hidden; display: flex; flex-direction: column; transition: all 0.2s; }
+.cand-card:hover { border-color: var(--border2); transform: translateY(-2px); }
+
+.cand-photo-wrap { width: 100%; height: 200px; overflow: hidden; position: relative; background: linear-gradient(155deg, rgba(212,175,55,0.08), rgba(10,15,30,0.9)); }
+.cand-photo-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; transition: transform 0.4s ease; }
+.cand-card:hover .cand-photo-wrap img { transform: scale(1.04); }
+.cand-photo-wrap .cand-no-photo { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; font-size: 4rem; }
+.cand-role-badge { position: absolute; top: 10px; left: 10px; padding: 3px 10px; border-radius: 50px; font-size: 0.6rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+.badge-master { background: rgba(59,130,246,0.7); border: 1px solid rgba(59,130,246,0.5); color: #E0EEFF; }
+.badge-misse  { background: rgba(236,72,153,0.7); border: 1px solid rgba(236,72,153,0.5); color: #FFE0F4; }
+
+.cand-body { padding: 14px 16px 16px; display: flex; flex-direction: column; gap: 10px; }
+.cand-name .t-en { font-weight: 700; font-size: 0.95rem; color: var(--text1); }
+
+.btn-vote { width: 100%; padding: 12px; background: linear-gradient(135deg, rgba(212,175,55,0.12), rgba(212,175,55,0.05)); border: 1px solid var(--border2); border-radius: var(--r); color: var(--gold); cursor: pointer; }
+.btn-vote:hover { background: linear-gradient(135deg,rgba(212,175,55,0.22),rgba(212,175,55,0.1)); }
+
+/* Modal */
+.modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.88); backdrop-filter: blur(8px); z-index: 999; display: flex; align-items: center; justify-content: center; padding: 16px; }
+.modal-box { background: var(--navy-card); border: 1px solid var(--border2); border-radius: 22px; padding: 30px 24px; max-width: 460px; width: 100%; max-height: 92vh; overflow-y: auto; position: relative; }
+.m-close { position: absolute; top: 14px; right: 14px; width: 30px; height: 30px; background: var(--navy-up); border: 1px solid var(--border); border-radius: 8px; cursor: pointer; }
+.m-head { text-align: center; margin-bottom: 20px; }
+.m-avatar { width: 72px; height: 72px; background: linear-gradient(135deg,rgba(212,175,55,0.2),rgba(212,175,55,0.04)); border: 2px solid var(--border2); border-radius: 16px; overflow: hidden; display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 12px; }
+.m-avatar img { width:100%; height:100%; object-fit:cover; object-position:top; }
+.amt-badge { display: inline-flex; align-items: center; gap: 6px; background: rgba(212,175,55,0.1); border: 1px solid var(--border2); border-radius: 50px; padding: 5px 14px; margin-top: 10px; }
+
+.btn-confirm { width: 100%; padding: 14px; background: linear-gradient(135deg, #0f7a50, #10B981); color: white; border: none; border-radius: var(--r); cursor: pointer; font-size: 1rem; font-weight: 700; font-family: 'Outfit', sans-serif; transition: all 0.2s; }
+.btn-confirm:hover:not(:disabled) { transform: translateY(-1px); box-shadow: 0 8px 20px rgba(16,185,129,0.3); }
+.btn-confirm:disabled { opacity: 0.6; cursor: not-allowed; }
+.btn-cancel { width: 100%; padding: 11px; background: transparent; border: 1px solid rgba(239,68,68,0.3); color: #FCA5A5; border-radius: var(--r); cursor: pointer; margin-top: 8px; font-family: 'Outfit', sans-serif; }
+.spinner { display: inline-block; width: 14px; height: 14px; border: 2px solid rgba(255,255,255,0.2); border-top-color: white; border-radius: 50%; animation: spin 0.6s linear infinite; vertical-align: middle; margin-right: 7px; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.alert { padding: 12px 15px; border-radius: var(--r); font-size: 0.82rem; margin-bottom: 16px; animation: fadeUp 0.3s ease both; }
+.alert-error   { background: rgba(239,68,68,0.12); border: 1px solid rgba(239,68,68,0.3); color: #FCA5A5; }
+.alert-success { background: rgba(16,185,129,0.12); border: 1px solid rgba(16,185,129,0.3); color: #6EE7B7; }
+.alert-info    { background: rgba(59,130,246,0.12); border: 1px solid rgba(59,130,246,0.3); color: #93C5FD; }
+
+@keyframes fadeUp { from { opacity:0; transform:translateY(30px); } to { opacity:1; transform:translateY(0); } }
+
+#toasts { position: fixed; bottom: 22px; right: 18px; z-index: 9999; display: flex; flex-direction: column; gap: 9px; }
+.toast { background: var(--navy-card); border: 1px solid var(--border2); border-radius: 13px; padding: 13px 16px; box-shadow: 0 8px 28px rgba(0,0,0,0.4); animation: toastIn 0.4s cubic-bezier(0.34,1.56,0.64,1) both; }
+@keyframes toastIn { from { opacity:0; transform:translateX(50px); } to { opacity:1; transform:translateX(0); } }
+.toast-success { border-color: rgba(16,185,129,0.4); }
+.toast-error   { border-color: rgba(239,68,68,0.4); }
+.toast-info    { border-color: rgba(59,130,246,0.4); }
+
+.status-banner { border-radius: 18px; padding: 20px 20px 18px; margin-bottom: 20px; display: flex; flex-direction: column; align-items: center; gap: 14px; text-align: center; animation: fadeUp 0.5s ease both; }
+.status-pending { background: linear-gradient(135deg, rgba(245,158,11,0.1), rgba(245,158,11,0.04)); border: 1px solid rgba(245,158,11,0.4); }
+.status-open    { background: linear-gradient(135deg, rgba(16,185,129,0.1), rgba(16,185,129,0.04)); border: 1px solid rgba(16,185,129,0.4); }
+.status-closed  { background: linear-gradient(135deg, rgba(239,68,68,0.1), rgba(239,68,68,0.04)); border: 1px solid rgba(239,68,68,0.4); }
+.status-loading { background: rgba(212,175,55,0.05); border: 1px dashed var(--border2); }
+.status-icon { font-size: 1.8rem; }
+.status-title { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; }
+.status-pending .status-title { color: #FDE68A; }
+.status-open    .status-title { color: #6EE7B7; }
+.status-closed  .status-title { color: #FCA5A5; }
+.status-loading .status-title { color: var(--text2); }
+.status-sub { font-size: 0.78rem; color: var(--text3); }
+.status-date-row { display: flex; gap: 18px; flex-wrap: wrap; justify-content: center; font-size: 0.72rem; color: var(--text3); }
+.status-date-row span { display: flex; align-items: center; gap: 5px; }
 
 .countdown-grid { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 4px; }
 .cd-block { display: flex; flex-direction: column; align-items: center; background: rgba(0,0,0,0.25); border-radius: 12px; padding: 10px 14px 8px; min-width: 60px; border: 1px solid rgba(255,255,255,0.06); }
-.cd-val { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700; line-height: 1; color: #6EE7B7; }
+.cd-val { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 700; line-height: 1; }
+.status-pending .cd-val { color: #FDE68A; }
+.status-open    .cd-val { color: #6EE7B7; }
 .cd-lbl { font-size: 0.58rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text3); margin-top: 4px; }
+
+.sync-badge { display: inline-flex; align-items: center; gap: 5px; font-size: 0.62rem; color: var(--text3); background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 50px; padding: 3px 10px; }
+.sync-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); box-shadow: 0 0 6px var(--green); animation: pulse 2s ease-in-out infinite; }
+.sync-dot.err { background: var(--red); box-shadow: 0 0 6px var(--red); animation: none; }
+@keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.4;} }
 
 .classe-pill { display: inline-flex; align-items: center; gap: 5px; padding: 3px 9px; border-radius: 6px; font-size: 0.58rem; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; margin-top: 5px; white-space: nowrap; }
 .classe-tt  { background: rgba(168,85,247,0.15); border: 1px solid rgba(168,85,247,0.35); color: #D8B4FE; }
+.classe-at  { background: rgba(245,158,11,0.15); border: 1px solid rgba(245,158,11,0.35); color: #FDE68A; }
+.classe-ct  { background: rgba(20,184,166,0.15); border: 1px solid rgba(20,184,166,0.35); color: #99F6E4; }
+.classe-ae  { background: rgba(239,68,68,0.15);  border: 1px solid rgba(239,68,68,0.35);  color: #FCA5A5; }
 .rc-classe { font-size: 0.58rem; font-weight: 600; letter-spacing: 0.7px; text-transform: uppercase; margin: 2px 0 6px; padding: 2px 7px; border-radius: 5px; display: inline-block; }
+.m-classe { font-size: 0.7rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; margin-top: 5px; padding: 3px 10px; border-radius: 7px; display: inline-block; }
+
+.password-modal { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: var(--navy-card); border: 2px solid var(--gold-dark); border-radius: 20px; padding: 28px; z-index: 1002; max-width: 380px; width: 90%; text-align: center; }
+.password-modal h4 { color: var(--gold); margin-bottom: 15px; }
+.password-modal input { width: 100%; padding: 12px; background: var(--navy-up); border: 1px solid var(--border2); border-radius: 10px; color: var(--text1); margin: 15px 0; font-size: 1rem; text-align: center; }
+.password-modal input:focus { outline: none; border-color: var(--gold); }
+.password-error { color: #FCA5A5; font-size: 0.8rem; margin-bottom: 10px; }
+.password-buttons { display: flex; gap: 12px; justify-content: center; }
+.password-buttons button { padding: 10px 20px; border-radius: 10px; cursor: pointer; }
+.password-confirm { background: var(--gold-dark); border: none; color: white; }
+.password-cancel { background: transparent; border: 1px solid var(--border2); color: var(--text1); }
+
+.reset-confirm-modal { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: var(--navy-card); border: 2px solid var(--gold-dark); border-radius: 20px; padding: 28px; z-index: 1001; max-width: 380px; width: 90%; text-align: center; }
+.reset-confirm-modal h4 { color: var(--gold); margin-bottom: 15px; }
+.reset-confirm-modal p { margin-bottom: 20px; color: var(--text2); }
+.reset-buttons { display: flex; gap: 12px; justify-content: center; }
+.reset-buttons button { padding: 10px 20px; border-radius: 10px; cursor: pointer; }
+.reset-confirm-yes { background: var(--red); border: none; color: white; }
+.reset-confirm-no { background: transparent; border: 1px solid var(--border2); color: var(--text1); }
 
 @media (max-width: 768px) {
   .cands-grid { grid-template-columns: repeat(2, 1fr); }
@@ -397,14 +487,14 @@ body {
         <div class="stat-div"></div>
         <div class="stat-item"><div class="stat-value" id="sVoters">0</div><div class="stat-en">Votants</div></div>
         <div class="stat-div"></div>
-        <div class="stat-item"><div class="stat-value" id="sCands">6</div><div class="stat-en">Candidats</div></div>
+        <div class="stat-item"><div class="stat-value" id="sCands">0</div><div class="stat-en">Candidats</div></div>
       </div>
     </div>
 
-    <div id="statusBanner" class="status-banner status-open">
-      <div class="status-icon">🗳️</div>
-      <div class="status-title">✅ Vote ouvert !</div>
-      <div class="status-sub">Clôture le 19 Mai 2026 à 12h25</div>
+    <div id="statusBanner" class="status-banner status-loading">
+      <div class="status-icon">🕐</div>
+      <div class="status-title">Synchronisation avec le serveur…</div>
+      <div class="status-sub">Vérification de l'heure en cours…</div>
     </div>
 
     <div class="section-box">
@@ -412,6 +502,8 @@ body {
         <div class="sec-title"><div class="sec-icon">📊</div><div class="sec-label"><span class="t-en">Classement en direct</span></div></div>
         <div class="sec-actions" style="display:flex;gap:8px;flex-wrap:wrap;">
           <button class="btn-sm" onclick="doRefresh()">🔄 Actualiser</button>
+          <button class="btn-sm" onclick="doExport()">📥 Export</button>
+          <button class="btn-sm" onclick="syncFromCloud()">☁️ Sync</button>
         </div>
       </div>
       <div class="results-grid" id="resultsGrid"></div>
@@ -432,29 +524,42 @@ body {
 </div>
 </div>
 
+<div id="toasts"></div>
+
 <!-- HELP MENU -->
 <div class="overlay-help" id="helpOverlay" onclick="toggleHelpMenu()"></div>
 <div class="help-menu" id="helpMenu">
   <div class="help-header">
     <h3>❓ Aide</h3>
+    <button class="btn-sm btn-reset" onclick="requestAdminPassword()">⚠️ Reset votes</button>
     <button class="close-help" onclick="toggleHelpMenu()">✕</button>
   </div>
   <div class="help-section">
     <h4>📱 Comment voter ?</h4>
     <div class="help-step"><strong>1.</strong> Choisissez votre candidat(e)</div>
     <div class="help-step"><strong>2.</strong> Cliquez sur "Voter — 100 FCFA"</div>
-    <div class="help-step"><strong>3.</strong> Entrez votre numéro Mobile Money</div>
-    <div class="help-step"><strong>4.</strong> Envoyez 100 FCFA à :</div>
-    <div class="help-step"><strong>   🟡 MTN:</strong> 675 134 608</div>
-    <div class="help-step"><strong>   🟠 Orange:</strong> 657 547 901</div>
-    <div class="help-step"><strong>5.</strong> Revenez et validez votre vote</div>
-    <div class="help-step"><strong>6.</strong> Votre vote est enregistré ✅</div>
+    <div class="help-step"><strong>3.</strong> Entrez votre numéro MTN ou Orange</div>
+    <div class="help-step"><strong>4.</strong> Cliquez "Payer & Voter"</div>
+    <div class="help-step"><strong>5.</strong> Une demande de paiement arrive sur votre téléphone</div>
+    <div class="help-step"><strong>6.</strong> Entrez votre code PIN Mobile Money et confirmez</div>
+    <div class="help-step"><strong>7.</strong> Votre vote est automatiquement validé ✅</div>
   </div>
   <div class="help-section">
     <h4>💳 Paiement Mobile Money</h4>
-    <p>🟡 <strong>MTN Money :</strong> 675 134 608</p>
-    <p>🟠 <strong>Orange Money :</strong> 657 547 901</p>
+    <p>🟡 <strong>MTN Money :</strong> Numéros 67X, 68X, 650-654</p>
+    <p>🟠 <strong>Orange Money :</strong> Numéros 69X, 655-659</p>
     <p>💰 Montant fixe : <strong>100 FCFA</strong> par vote</p>
+  </div>
+  <div class="help-section">
+    <h4>🌐 Synchronisation Cloud</h4>
+    <p>✅ Les votes sont centralisés sur le serveur</p>
+    <p>✅ Mise à jour automatique toutes les 10 secondes</p>
+    <p>✅ Paiement sécurisé via Campay</p>
+  </div>
+  <div class="help-section">
+    <h4>⏰ Période de vote</h4>
+    <p>🗓️ Début : 11 Mai 2026 à 00h00</p>
+    <p>🗓️ Fin : 19 Mai 2026 à 12h25</p>
   </div>
   <div class="help-section">
     <h4>👨‍💻 Développeur</h4>
@@ -471,6 +576,31 @@ body {
 
 <script>
 // ═══════════════════════════════════════════════════
+//  ✅ CONFIGURATION CAMPAY
+//  Appels via Netlify Function (serverless) — pas de CORS
+// ═══════════════════════════════════════════════════
+const CAMPAY_CONFIG = {
+  // Netlify Functions endpoint (raccourci via netlify.toml)
+  PROXY_URL:   '/api/campay',
+  AMOUNT:      '25',
+  CURRENCY:    'XAF',
+  DESCRIPTION: 'Vote SUPPTIC Buea 2026',
+  MOMO_NUMBER: '675134608',   // MTN reçoit
+  OM_NUMBER:   '657547901'    // Orange reçoit
+};
+
+// ═══════════════════════════════════════════════════
+//  CONFIGURATION CLOUD - JSONBin.io
+// ═══════════════════════════════════════════════════
+const CLOUD_CONFIG = {
+  BIN_ID: "6a037213adc21f119a8e08fd",
+  X_MASTER_KEY: "$2a$10$K1BsUh56LdRqcPHt6GYoH..QPdoKcK.BmwRJhZjofCQwWe46lEhHu",
+  URL: "https://api.jsonbin.io/v3/b/"
+};
+
+const ADMIN_PASSWORD = "Adminmathieu";
+
+// ═══════════════════════════════════════════════════
 //  CANDIDATS
 // ═══════════════════════════════════════════════════
 const CANDS = [
@@ -478,49 +608,279 @@ const CANDS = [
   { id:2, name:"MVOGO EBODE DANIEL",               role:"MASTER", classe:"TECHNICIEN DE TELECOM",          icon:"👨‍🎓", photo:"IMG-20260509-WA0012.jpg" },
   { id:3, name:"YOUSSOUFA MOUSSA",                 role:"MASTER", classe:"TECHNICIEN DE TELECOM",          icon:"👨‍💻", photo:"IMG-20260511-WA0032.jpg" },
   { id:4, name:"MANTHO INGRID",                    role:"MISSE",  classe:"TECHNICIENE DE TELECOM",         icon:"👩‍💻", photo:"IMG-20260509-WA0016.jpg" },
-  { id:5, name:"MAAGANG NYOTCHOBIA ISMAILA PAMELA",role:"MISSE",  classe:"CONTROLEUR DE POSTE ET TELECOM", icon:"👨‍🏫", photo:"SMAILA.jpg" },
+  { id:5, name:"MAAGANG NYOTCHOBIA ISMAILA PAMELA",role:"MISSE",  classe:"CONTROLEUR DE POSTE ET TELECOM", icon:"👨‍🏫", photo:"SMAIL.jpg" },
   { id:6, name:"JEANS CALYNE",                     role:"MISSE",  classe:"TECHNICIENE DE TELECOM",         icon:"👩‍🏫", photo:"JEANS.jpg" }
 ];
 
-const KEYS = { v:'spt_v', voters:'spt_voters', vid:'spt_vid' };
+const KEYS = { v:'spt_v', voters:'spt_voters', txns:'spt_txns', vid:'spt_vid' };
 let filter = 'all';
+let lastWinnerId = null;
 
 // ═══════════════════════════════════════════════════
-//  STORAGE
+//  CAMPAY API FUNCTIONS
 // ═══════════════════════════════════════════════════
-function getVotes()  { return JSON.parse(localStorage.getItem(KEYS.v) || '{}'); }
-function getVoters() { return JSON.parse(localStorage.getItem(KEYS.voters) || '[]'); }
 
-function saveVotes(votes, voters) {
-  localStorage.setItem(KEYS.v, JSON.stringify(votes));
-  localStorage.setItem(KEYS.voters, JSON.stringify(voters));
+/**
+ * Formate le numéro camerounais au format international 237XXXXXXXXX
+ */
+function formatPhone(phone) {
+  phone = phone.replace(/[\s\-\.]/g, '');
+  if (phone.startsWith('00237')) phone = phone.slice(5);
+  else if (phone.startsWith('+237')) phone = phone.slice(4);
+  else if (phone.startsWith('237') && phone.length === 12) phone = phone.slice(3);
+  if (phone.startsWith('0')) phone = phone.slice(1);
+  return '237' + phone;
 }
 
-function initDB() {
-  if (!localStorage.getItem(KEYS.v)) {
-    let v = {}; CANDS.forEach(c => v[c.id] = 0);
-    localStorage.setItem(KEYS.v, JSON.stringify(v));
-  }
-  if (!localStorage.getItem(KEYS.voters)) localStorage.setItem(KEYS.voters, '[]');
-}
-
-// ═══════════════════════════════════════════════════
-//  DÉTECTION OPÉRATEUR
-// ═══════════════════════════════════════════════════
+/**
+ * Détecte l'opérateur selon le préfixe du numéro
+ */
 function detectOperator(phoneVal) {
   const tag = document.getElementById('operatorTag');
   if (!tag) return null;
   const cleaned = phoneVal.replace(/\D/g, '');
   if (cleaned.length < 3) { tag.innerHTML = ''; return null; }
-  const prefix = cleaned.substring(0, 2);
-  if (prefix === '65' || prefix === '67' || prefix === '68') {
-    tag.innerHTML = '<span class="op-badge op-mtn">🟡 MTN Money - Envoyez à 675134608</span>';
+  const prefix3 = parseInt(cleaned.substring(0, 3));
+  const mtnRanges = [[670,679],[680,689],[650,654]];
+  const omRanges  = [[690,699],[655,659]];
+  const isMtn = mtnRanges.some(([a,b]) => prefix3 >= a && prefix3 <= b);
+  const isOm  = omRanges.some(([a,b])  => prefix3 >= a && prefix3 <= b);
+  if (isMtn) {
+    tag.innerHTML = '<span class="op-badge op-mtn">🟡 MTN Money détecté</span>';
     return 'mtn';
-  } else if (prefix === '69') {
-    tag.innerHTML = '<span class="op-badge op-orange">🟠 Orange Money - Envoyez à 657547901</span>';
+  } else if (isOm) {
+    tag.innerHTML = '<span class="op-badge op-orange">🟠 Orange Money détecté</span>';
     return 'orange';
+  } else if (cleaned.length >= 3) {
+    tag.innerHTML = '<span class="op-badge op-unknown">❓ Vérifiez votre numéro</span>';
+    return null;
   }
   return null;
+}
+
+/**
+ * Lance une collecte via le proxy PHP (évite le CORS)
+ */
+async function campayCollect(phone, candidateName, externalRef) {
+  const formattedPhone = formatPhone(phone);
+  const response = await fetch(`${CAMPAY_CONFIG.PROXY_URL}?action=collect`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      amount:             CAMPAY_CONFIG.AMOUNT,
+      currency:           CAMPAY_CONFIG.CURRENCY,
+      from:               formattedPhone,
+      description:        `${CAMPAY_CONFIG.DESCRIPTION} - ${candidateName}`,
+      external_reference: externalRef
+    })
+  });
+  if (!response.ok) {
+    const err = await response.json().catch(() => ({}));
+    throw new Error(err.error || err.message || err.detail || `Erreur HTTP ${response.status}`);
+  }
+  return await response.json();
+}
+
+/**
+ * Vérifie le statut d'une transaction via le proxy PHP
+ */
+async function campayCheckStatus(reference) {
+  const response = await fetch(
+    `${CAMPAY_CONFIG.PROXY_URL}?action=status&reference=${encodeURIComponent(reference)}`
+  );
+  if (!response.ok) throw new Error(`Erreur statut HTTP ${response.status}`);
+  return await response.json();
+}
+
+/**
+ * Lance le paiement Campay depuis le modal
+ */
+async function initiateCampayPayment(candidateId) {
+  const c         = CANDS.find(x => x.id === candidateId);
+  const phoneInp  = document.getElementById('voterPhone');
+  const statusDiv = document.getElementById('paymentStatus');
+  const alertEl   = document.getElementById('modalAlert');
+  const btn       = document.getElementById('btnConfirm');
+  if (!c || !phoneInp || !btn) return;
+
+  const phoneRaw = phoneInp.value.replace(/\D/g, '');
+  if (phoneRaw.length < 9) {
+    alertEl.innerHTML = '<div class="alert alert-error">⚠️ Entrez un numéro valide à 9 chiffres (ex: 675134608)</div>';
+    return;
+  }
+
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span>Envoi de la demande…';
+  alertEl.innerHTML = '';
+  statusDiv.innerHTML = '';
+
+  const externalRef = `VOTE_${candidateId}_${Date.now()}`;
+
+  try {
+    const result = await campayCollect(phoneRaw, c.name, externalRef);
+    
+    if (result.reference) {
+      statusDiv.innerHTML = `
+        <div class="payment-status-box pending">
+          <div class="payment-status-icon">📱</div>
+          <p>Demande envoyée au <strong>+237${phoneRaw}</strong></p>
+          <p>Approuvez le paiement de <strong>100 FCFA</strong> sur votre téléphone</p>
+          <p style="font-size:0.72rem;color:#93C5FD;margin-top:4px;">Entrez votre code PIN Mobile Money et confirmez</p>
+          <div class="polling-indicator"><span class="spinner"></span>Vérification du paiement en cours…</div>
+        </div>`;
+      btn.innerHTML = '⏳ En attente de votre confirmation…';
+      pollPaymentStatus(result.reference, candidateId, 0);
+    } else {
+      throw new Error(result.message || result.detail || 'Réponse inattendue de Campay');
+    }
+  } catch (err) {
+    btn.disabled = false;
+    btn.innerHTML = '💳 Payer 100 FCFA & Voter';
+    let errMsg = err.message || 'Impossible de contacter Campay.';
+    // Erreurs communes
+    if (errMsg.includes('Failed to fetch') || errMsg.includes('NetworkError')) {
+      errMsg = 'Erreur réseau. Vérifiez votre connexion internet.';
+    }
+    alertEl.innerHTML = `<div class="alert alert-error">❌ ${errMsg}</div>`;
+    console.error('Campay error:', err);
+  }
+}
+
+/**
+ * Polling du statut de la transaction (toutes les 3s, max 2 minutes)
+ */
+function pollPaymentStatus(reference, candidateId, attempts) {
+  if (attempts > 40) {
+    const statusDiv = document.getElementById('paymentStatus');
+    const btn       = document.getElementById('btnConfirm');
+    if (statusDiv) statusDiv.innerHTML = '<div class="payment-status-box failed"><div class="payment-status-icon">⏱️</div><p>Délai dépassé. Le paiement n\'a pas été confirmé à temps.</p><p>Réessayez si vous avez payé.</p></div>';
+    if (btn) { btn.disabled = false; btn.innerHTML = '💳 Réessayer'; }
+    return;
+  }
+
+  setTimeout(async () => {
+    // Vérifier que le modal est toujours ouvert
+    if (!document.getElementById('theModal')) return;
+    try {
+      const status = await campayCheckStatus(reference);
+      console.log(`[Campay poll ${attempts}]`, status.status);
+
+      if (status.status === 'SUCCESSFUL') {
+        // ✅ Paiement confirmé → enregistrer le vote
+        const statusDiv = document.getElementById('paymentStatus');
+        if (statusDiv) statusDiv.innerHTML = `<div class="payment-status-box success"><div class="payment-status-icon">✅</div><p><strong>Paiement confirmé !</strong></p><p>Votre vote est en cours d'enregistrement…</p></div>`;
+        setTimeout(() => registerVote(candidateId), 800);
+
+      } else if (status.status === 'FAILED') {
+        const statusDiv = document.getElementById('paymentStatus');
+        const btn       = document.getElementById('btnConfirm');
+        if (statusDiv) statusDiv.innerHTML = '<div class="payment-status-box failed"><div class="payment-status-icon">❌</div><p>Paiement <strong>échoué ou refusé</strong>.</p><p>Vérifiez votre solde et réessayez.</p></div>';
+        if (btn) { btn.disabled = false; btn.innerHTML = '💳 Réessayer'; }
+
+      } else {
+        // PENDING → continuer le polling
+        pollPaymentStatus(reference, candidateId, attempts + 1);
+      }
+    } catch (err) {
+      console.warn('Poll error, retry:', err.message);
+      pollPaymentStatus(reference, candidateId, attempts + 1);
+    }
+  }, 3000);
+}
+
+/**
+ * Enregistre le vote après paiement Campay confirmé
+ */
+async function registerVote(candidateId) {
+  const c = CANDS.find(x => x.id === candidateId);
+  if (!c) return;
+
+  let votes = getVotes();
+  votes[c.id] = (votes[c.id] || 0) + 1;
+  localStorage.setItem(KEYS.v, JSON.stringify(votes));
+
+  let txns = getTxns();
+  txns.push({ id: Date.now(), cand: c.name, date: new Date().toLocaleString(), method: 'campay' });
+  localStorage.setItem(KEYS.txns, JSON.stringify(txns));
+
+  await saveToCloud();
+
+  closeModal();
+  renderResults();
+  renderCands();
+  showThankYouCard(c.name);
+  showToast('success', `🎉 Vote pour <strong>${c.name}</strong> enregistré ! Merci.`);
+}
+
+// ═══════════════════════════════════════════════════
+//  STORAGE
+// ═══════════════════════════════════════════════════
+function getVoterId() {
+  let vid = localStorage.getItem(KEYS.vid);
+  if (!vid) { vid = 'v_'+Date.now()+'_'+Math.random().toString(36).slice(2,9); localStorage.setItem(KEYS.vid, vid); }
+  return vid;
+}
+function getVotes()  { return JSON.parse(localStorage.getItem(KEYS.v)      || '{}'); }
+function getVoters() { return JSON.parse(localStorage.getItem(KEYS.voters) || '[]'); }
+function getTxns()   { return JSON.parse(localStorage.getItem(KEYS.txns)   || '[]'); }
+
+function initDB() {
+  if (!localStorage.getItem(KEYS.v)) {
+    let v = {}; CANDS.forEach(c => v[c.id] = 0); localStorage.setItem(KEYS.v, JSON.stringify(v));
+  }
+  if (!localStorage.getItem(KEYS.voters)) localStorage.setItem(KEYS.voters, '[]');
+  if (!localStorage.getItem(KEYS.txns))   localStorage.setItem(KEYS.txns,   '[]');
+}
+
+// ═══════════════════════════════════════════════════
+//  CLOUD SYNC
+// ═══════════════════════════════════════════════════
+function updateSyncStatus(online, message) {
+  const d = document.getElementById('liveSyncStatus');
+  if (online) {
+    d.className = 'sync-status online';
+    d.innerHTML = `<span class="sync-dot-live"></span><span>🌐 Cloud: ON</span>`;
+  } else {
+    d.className = 'sync-status offline';
+    d.innerHTML = `<span style="background:#FCA5A5;width:8px;height:8px;border-radius:50%;display:inline-block;"></span><span>⚠️ ${message||'Local'}</span>`;
+  }
+}
+
+async function loadFromCloud() {
+  try {
+    const r = await fetch(`${CLOUD_CONFIG.URL}${CLOUD_CONFIG.BIN_ID}/latest`, { headers: { 'X-Master-Key': CLOUD_CONFIG.X_MASTER_KEY } });
+    if (r.ok) {
+      const data = await r.json();
+      if (data.record?.votes && Object.keys(data.record.votes).length > 0) {
+        localStorage.setItem(KEYS.v, JSON.stringify(data.record.votes));
+        localStorage.setItem(KEYS.voters, JSON.stringify(data.record.voters || []));
+        localStorage.setItem(KEYS.txns, JSON.stringify(data.record.transactions || []));
+        updateSyncStatus(true);
+        return true;
+      }
+    }
+    throw new Error('no data');
+  } catch(e) { updateSyncStatus(false, 'Mode local'); return false; }
+}
+
+async function saveToCloud() {
+  try {
+    const body = { votes: getVotes(), voters: getVoters(), transactions: getTxns(), lastUpdate: new Date().toISOString() };
+    const r = await fetch(`${CLOUD_CONFIG.URL}${CLOUD_CONFIG.BIN_ID}`, {
+      method: 'PUT',
+      headers: { 'X-Master-Key': CLOUD_CONFIG.X_MASTER_KEY, 'Content-Type': 'application/json' },
+      body: JSON.stringify(body)
+    });
+    if (r.ok) { updateSyncStatus(true); return true; }
+    throw new Error('save failed');
+  } catch(e) { updateSyncStatus(false, 'Mode local'); return false; }
+}
+
+async function syncFromCloud() {
+  showToast('info','☁️ Synchronisation en cours...');
+  const ok = await loadFromCloud();
+  if (ok) { renderResults(); renderCands(); showToast('success','✅ Synchronisé !'); }
+  else showToast('error','❌ Erreur de synchronisation.');
 }
 
 // ═══════════════════════════════════════════════════
@@ -558,133 +918,147 @@ function startConfetti() {
 //  THANK YOU CARD
 // ═══════════════════════════════════════════════════
 function showThankYouCard(name) {
-  const msgs = ["Merci d'avoir participé ! 🇨🇲","Votre voix compte pour l'avenir de SUP'PTIC !","Ensemble, construisons une meilleure école !"];
+  const msgs = ["Merci d'avoir participé ! 🇨🇲","Votre voix compte pour l'avenir de SUP'PTIC !","Ensemble, construisons une meilleure école !","Votre vote est précieux pour la communauté !"];
   const msg = msgs[Math.floor(Math.random()*msgs.length)];
   const div = document.createElement('div');
   div.className = 'thankyou-card';
-  div.innerHTML = `<div class="thankyou-icon">🎉🙏🎊</div><h2>MERCI !</h2><p>Votre vote pour <span class="candidate-name">${name}</span> a été confirmé et enregistré.</p><p>${msg}</p><button class="thankyou-close" onclick="this.parentElement.remove()">Fermer</button>`;
+  div.innerHTML = `<div class="thankyou-icon">🎉🙏🎊</div><h2>MERCI !</h2><p>Votre vote pour <span class="candidate-name">${name}</span> a été confirmé et enregistré.</p><p>${msg}</p><p style="font-size:0.8rem;color:var(--gold);">✅ Paiement Campay confirmé • Vote synchronisé cloud</p><button class="thankyou-close" onclick="this.parentElement.remove()">Fermer</button>`;
   document.body.appendChild(div);
   startConfetti();
 }
 
 // ═══════════════════════════════════════════════════
-//  PROCESSUS DE VOTE
+//  WINNER CHECK
 // ═══════════════════════════════════════════════════
-function processVote(candidateId) {
-  const c = CANDS.find(x => x.id === candidateId);
-  const phoneInp = document.getElementById('voterPhone');
-  const alertEl = document.getElementById('modalAlert');
-  const btn = document.getElementById('btnConfirm');
-  
-  if (!c || !phoneInp || !btn) return;
-  
-  const phoneRaw = phoneInp.value.replace(/\D/g, '');
-  if (phoneRaw.length < 9) {
-    alertEl.innerHTML = '<div class="alert alert-error">⚠️ Entrez un numéro valide (ex: 677777777)</div>';
-    return;
-  }
-  
-  const prefix = phoneRaw.substring(0, 2);
-  let receiver = '';
-  let operator = '';
-  
-  if (prefix === '65' || prefix === '67' || prefix === '68') {
-    receiver = '675134608';
-    operator = 'MTN';
-  } else if (prefix === '69') {
-    receiver = '657547901';
-    operator = 'ORANGE';
-  } else {
-    alertEl.innerHTML = '<div class="alert alert-error">❌ Numéro non reconnu. Utilisez MTN (65X,67X,68X) ou Orange (69X)</div>';
-    return;
-  }
-  
-  let voters = getVoters();
-  if (voters.includes(phoneRaw)) {
-    alertEl.innerHTML = '<div class="alert alert-error">❌ Ce numéro a déjà voté !</div>';
-    return;
-  }
-  
-  const confirmMsg = confirm(`📱 PAIEMENT MOBILE MONEY\n\n➡️ Envoyez 100 FCFA à :\n💰 ${operator}: ${receiver}\n\n✅ Après paiement, cliquez sur OK pour valider votre vote pour ${c.name}\n\n⚠️ L'argent arrive INSTANTANÉMENT sur notre compte !`);
-  
-  if (!confirmMsg) return;
-  
-  btn.disabled = true;
-  btn.innerHTML = '⏳ Validation en cours...';
-  
+function checkWinnerAndCelebrate() {
   let votes = getVotes();
-  votes[c.id] = (votes[c.id] || 0) + 1;
-  voters.push(phoneRaw);
-  
-  saveVotes(votes, voters);
-  
-  alert(`✅ VOTE VALIDÉ !\n\n👑 ${c.name}\n📱 Votre numéro: ${phoneRaw}\n💰 100 FCFA reçus sur ${operator} (${receiver})\n\nMerci d'avoir voté !`);
-  
-  closeModal();
-  renderResults();
-  renderCands();
-  showThankYouCard(c.name);
+  let total = Object.values(votes).reduce((a,b)=>a+b,0);
+  if (total === 0) return;
+  let sorted = [...CANDS].sort((a,b)=>(votes[b.id]||0)-(votes[a.id]||0));
+  let wId = sorted[0].id;
+  let wVotes = votes[wId]||0, sVotes = votes[sorted[1]?.id]||0;
+  if (((wVotes-sVotes) >= 2 || total >= 15) && lastWinnerId !== wId) {
+    lastWinnerId = wId;
+    showToast('success', `🏆 ${sorted[0].name} est en tête ! 🎉`);
+  }
 }
 
 // ═══════════════════════════════════════════════════
-//  AFFICHAGE
+//  ADMIN / RESET
+// ═══════════════════════════════════════════════════
+function requestAdminPassword() {
+  const div = document.createElement('div'); div.className='modal-overlay'; div.id='passwordModal';
+  div.innerHTML=`<div class="password-modal"><h4>🔐 Accès administrateur</h4><p style="font-size:0.8rem;color:var(--text3);">Mot de passe pour réinitialiser les votes</p><input type="password" id="adminPasswordInput" placeholder="Mot de passe" autocomplete="off"><div id="passwordError" class="password-error"></div><div class="password-buttons"><button class="password-confirm" onclick="checkAdminPassword()">Valider</button><button class="password-cancel" onclick="closePasswordModal()">Annuler</button></div></div>`;
+  document.body.appendChild(div);
+  setTimeout(()=>{ let i=document.getElementById('adminPasswordInput'); if(i){i.focus(); i.addEventListener('keypress',e=>{ if(e.key==='Enter') checkAdminPassword(); });} }, 100);
+}
+function closePasswordModal() { document.getElementById('passwordModal')?.remove(); }
+function checkAdminPassword() {
+  const inp=document.getElementById('adminPasswordInput'), err=document.getElementById('passwordError');
+  if (inp.value===ADMIN_PASSWORD) { closePasswordModal(); confirmResetAllVotes(); }
+  else { err.innerHTML='❌ Mot de passe incorrect.'; inp.value=''; inp.focus(); }
+}
+function confirmResetAllVotes() {
+  const div=document.createElement('div'); div.className='modal-overlay'; div.id='resetConfirmModal';
+  div.innerHTML=`<div class="reset-confirm-modal"><h4>⚠️ RÉINITIALISATION TOTALE</h4><p>⚠️ Cette action remet tous les votes à ZÉRO et est <strong style="color:#FCA5A5;">IRRÉVERSIBLE</strong>.</p><div class="reset-buttons"><button class="reset-confirm-yes" onclick="resetAllVotes()">OUI, TOUT À ZÉRO</button><button class="reset-confirm-no" onclick="document.getElementById('resetConfirmModal').remove()">Annuler</button></div></div>`;
+  document.body.appendChild(div);
+}
+async function resetAllVotes() {
+  let v={}; CANDS.forEach(c=>v[c.id]=0);
+  localStorage.setItem(KEYS.v, JSON.stringify(v));
+  localStorage.setItem(KEYS.voters,'[]'); localStorage.setItem(KEYS.txns,'[]');
+  localStorage.removeItem(KEYS.vid); getVoterId();
+  await saveToCloud();
+  lastWinnerId=null;
+  renderResults(); renderCands();
+  showToast('info','🗳️ Tous les votes ont été remis à zéro.');
+  document.getElementById('resetConfirmModal')?.remove();
+}
+
+// ═══════════════════════════════════════════════════
+//  HELP MENU
+// ═══════════════════════════════════════════════════
+function toggleHelpMenu() {
+  document.getElementById('helpMenu').classList.toggle('open');
+  document.getElementById('helpOverlay').classList.toggle('show');
+}
+
+// ═══════════════════════════════════════════════════
+//  HELPERS
+// ═══════════════════════════════════════════════════
+function showToast(type, html) {
+  const c=document.getElementById('toasts'), el=document.createElement('div');
+  el.className='toast toast-'+type; el.innerHTML=html; c.appendChild(el);
+  setTimeout(()=>{ el.style.opacity='0'; setTimeout(()=>el.remove(),400); },3800);
+}
+
+function photoTag(c) {
+  if (c.photo) return `<img src="${c.photo}" alt="${c.name}" loading="lazy" onerror="this.style.display='none';this.nextSibling.style.display='flex'"><span class="rc-fallback" style="display:none">${c.icon}</span>`;
+  return `<span class="rc-fallback">${c.icon}</span>`;
+}
+
+function classeCSS(classe) {
+  if (!classe) return 'classe-at';
+  const k=classe.toUpperCase();
+  if (k.includes('TELECOM'))  return 'classe-tt';
+  if (k.includes('CONTROLEUR')||k.includes('CONTRÔLEUR')) return 'classe-ct';
+  if (k.includes('EXPLOITATION')) return 'classe-ae';
+  return 'classe-at';
+}
+
+// ═══════════════════════════════════════════════════
+//  RENDER RESULTS
 // ═══════════════════════════════════════════════════
 function renderResults() {
-  const votes = getVotes();
-  const voters = getVoters();
-  const total = Object.values(votes).reduce((a,b) => a+b, 0);
-  document.getElementById('sTotVotes').textContent = total;
-  document.getElementById('sVoters').textContent = voters.length;
-  
-  const sorted = [...CANDS].sort((a,b) => (votes[b.id]||0) - (votes[a.id]||0));
-  const grid = document.getElementById('resultsGrid');
-  grid.innerHTML = '';
-  
-  sorted.forEach((c, i) => {
-    const count = votes[c.id] || 0;
-    const pct = total > 0 ? Math.round(count/total*100) : 0;
-    let medal = '', rankClass = '';
-    if (total > 0) {
-      if(i===0){ medal='<div class="medal">🥇</div>'; rankClass=' top1'; }
-      else if(i===1){ medal='<div class="medal">🥈</div>'; rankClass=' top2'; }
-      else if(i===2){ medal='<div class="medal">🥉</div>'; rankClass=' top3'; }
+  const votes=getVotes(), voters=getVoters();
+  const total=Object.values(votes).reduce((a,b)=>a+b,0);
+  document.getElementById('sTotVotes').textContent=total;
+  document.getElementById('sVoters').textContent=voters.length;
+  document.getElementById('sCands').textContent=CANDS.length;
+  const sorted=[...CANDS].sort((a,b)=>(votes[b.id]||0)-(votes[a.id]||0));
+  const grid=document.getElementById('resultsGrid'); grid.innerHTML='';
+  sorted.forEach((c,i) => {
+    const count=votes[c.id]||0, pct=total>0?Math.round(count/total*100):0;
+    let medal='', rankClass='';
+    if (total>0) {
+      if(i===0){medal='<div class="medal">🥇</div>';rankClass=' top1';}
+      else if(i===1){medal='<div class="medal">🥈</div>';rankClass=' top2';}
+      else if(i===2){medal='<div class="medal">🥉</div>';rankClass=' top3';}
     }
-    const photoHtml = c.photo ? `<img src="${c.photo}" onerror="this.style.display='none';this.nextSibling.style.display='flex'"><span class="rc-fallback" style="display:none">${c.icon}</span>` : `<span class="rc-fallback">${c.icon}</span>`;
-    const div = document.createElement('div');
-    div.className = 'rc' + rankClass;
-    div.innerHTML = medal + `<div class="rc-photo">${photoHtml}</div><div class="rc-name">${c.name}</div><div class="rc-role">${c.role}</div><div class="rc-classe classe-tt">${c.classe||''}</div><div class="rc-votes">${count}</div><div class="rc-pct">${pct}%</div><div class="bar"><div class="bar-fill" data-pct="${pct}"></div></div>`;
+    const div=document.createElement('div'); div.className='rc'+rankClass;
+    div.innerHTML=medal+`<div class="rc-photo">${photoTag(c)}</div><div class="rc-name">${c.name}</div><div class="rc-role">${c.role}</div><div class="rc-classe ${classeCSS(c.classe)}">${c.classe||''}</div><div class="rc-votes">${count}</div><div class="rc-pct">${pct}%</div><div class="bar"><div class="bar-fill" data-pct="${pct}"></div></div>`;
     grid.appendChild(div);
   });
-  setTimeout(() => { document.querySelectorAll('.bar-fill').forEach(f => f.style.width = f.getAttribute('data-pct')+'%'); }, 80);
+  setTimeout(()=>{ document.querySelectorAll('.bar-fill').forEach(f=>f.style.width=f.getAttribute('data-pct')+'%'); },80);
+  checkWinnerAndCelebrate();
 }
 
+// ═══════════════════════════════════════════════════
+//  RENDER CANDIDATES
+// ═══════════════════════════════════════════════════
 function renderCands() {
-  const grid = document.getElementById('candsGrid');
-  grid.innerHTML = '';
-  const list = filter === 'all' ? CANDS : CANDS.filter(c => c.role === filter);
-  
+  const grid=document.getElementById('candsGrid'); grid.innerHTML='';
+  const list=filter==='all'?CANDS:CANDS.filter(c=>c.role===filter);
   list.forEach(c => {
-    const badgeClass = c.role === 'MASTER' ? 'badge-master' : 'badge-misse';
-    const photoHtml = c.photo ? `<img src="${c.photo}" onerror="this.parentElement.innerHTML='<span class=\\'cand-no-photo\\'>${c.icon}</span>'">` : `<span class="cand-no-photo">${c.icon}</span>`;
-    const div = document.createElement('div');
-    div.className = 'cand-card';
-    div.innerHTML = `<div class="cand-photo-wrap">${photoHtml}<span class="cand-role-badge ${badgeClass}">${c.role}</span></div><div class="cand-body"><div class="cand-name"><span class="t-en">${c.name}</span></div><span class="classe-pill classe-tt">📚 ${c.classe||''}</span><button class="btn-vote" data-id="${c.id}">🗳️ Voter — 100 FCFA</button></div>`;
+    const badgeClass=c.role==='MASTER'?'badge-master':'badge-misse';
+    const photoContent=c.photo?`<img src="${c.photo}" alt="${c.name}" loading="lazy" onerror="this.parentElement.innerHTML='<span class=\\'cand-no-photo\\'>${c.icon}</span>'">`:`<span class="cand-no-photo">${c.icon}</span>`;
+    const div=document.createElement('div'); div.className='cand-card';
+    div.innerHTML=`<div class="cand-photo-wrap">${photoContent}<span class="cand-role-badge ${badgeClass}">${c.role}</span></div><div class="cand-body"><div class="cand-name"><span class="t-en">${c.name}</span></div><span class="classe-pill ${classeCSS(c.classe)}">📚 ${c.classe||''}</span><button class="btn-vote" data-id="${c.id}">🗳️ Voter — 100 FCFA</button></div>`;
     grid.appendChild(div);
   });
-  
-  document.querySelectorAll('.btn-vote').forEach(btn => {
-    btn.addEventListener('click', () => openModal(parseInt(btn.getAttribute('data-id'))));
-  });
+  document.querySelectorAll('.btn-vote').forEach(btn=>
+    btn.addEventListener('click',()=>openModal(parseInt(btn.getAttribute('data-id'))))
+  );
 }
 
+// ═══════════════════════════════════════════════════
+//  MODAL CAMPAY — demande numéro de téléphone
+// ═══════════════════════════════════════════════════
 function openModal(id) {
-  const c = CANDS.find(c => c.id === id);
-  if (!c) return;
-  const avatarContent = c.photo ? `<img src="${c.photo}" alt="${c.name}">` : `${c.icon}`;
-  const ol = document.createElement('div');
-  ol.className = 'modal-overlay';
-  ol.id = 'theModal';
-  ol.innerHTML = `
+  const c=CANDS.find(c=>c.id===id); if (!c) return;
+  const avatarContent=c.photo?`<img src="${c.photo}" alt="${c.name}">`:`${c.icon}`;
+  const ol=document.createElement('div'); ol.className='modal-overlay'; ol.id='theModal';
+  ol.innerHTML=`
     <div class="modal-box">
       <button class="m-close" onclick="closeModal()">✕</button>
       <div class="m-head">
@@ -693,67 +1067,139 @@ function openModal(id) {
         <div style="font-size:0.72rem;color:var(--text3);margin-top:3px;">${c.role} · ${c.classe}</div>
         <div class="amt-badge" style="margin-top:10px;">💰 Montant : <strong>100 FCFA</strong></div>
       </div>
+
+      <!-- Numéro de téléphone Mobile Money -->
       <div class="phone-section">
         <div class="phone-label">📱 Votre numéro Mobile Money (MTN ou Orange)</div>
         <div class="phone-input-wrap">
           <span class="phone-prefix">+237</span>
-          <input type="tel" id="voterPhone" placeholder="6XXXXXXXX" maxlength="9" oninput="detectOperator(this.value)" onkeypress="if(event.key==='Enter') processVote(${c.id})">
+          <input type="tel" id="voterPhone" placeholder="6XXXXXXXX" maxlength="9"
+                 oninput="detectOperator(this.value)"
+                 onkeypress="if(event.key==='Enter') initiateCampayPayment(${c.id})">
         </div>
         <div id="operatorTag" style="margin-top:6px;"></div>
       </div>
+
       <div class="campay-info">
-        <strong>💳 COMMENT PAYER (ARGENT RÉEL) :</strong><br>
-        📱 Envoyez <strong>100 FCFA</strong> par Mobile Money à :<br>
-        🟡 <strong>MTN:</strong> 675 134 608<br>
-        🟠 <strong>Orange:</strong> 657 547 901<br><br>
-        ✅ Après paiement, revenez ici et cliquez sur "Valider mon vote"<br>
-        ⚡ <strong>L'argent arrive instantanément sur nos comptes !</strong>
+        <strong>💳 Comment ça marche :</strong><br>
+        Une demande de paiement sera envoyée directement sur votre téléphone.<br>
+        Entrez votre <strong>code PIN Mobile Money</strong> pour confirmer le paiement de <strong>100 FCFA</strong>.<br>
+        Votre vote sera validé <strong>automatiquement</strong> dès la confirmation.
       </div>
+
+      <!-- Statut du paiement (affiché après soumission) -->
+      <div id="paymentStatus"></div>
       <div id="modalAlert"></div>
-      <button class="btn-confirm" id="btnConfirm" onclick="processVote(${c.id})">💳 Valider mon vote (100 FCFA)</button>
+
+      <button class="btn-confirm" id="btnConfirm" onclick="initiateCampayPayment(${c.id})">
+        💳 Payer 100 FCFA &amp; Voter
+      </button>
       <button class="btn-cancel" onclick="closeModal()">Annuler</button>
     </div>`;
   document.body.appendChild(ol);
-  ol.addEventListener('click', e => { if(e.target === ol) closeModal(); });
-  setTimeout(() => { document.getElementById('voterPhone')?.focus(); }, 150);
+  ol.addEventListener('click', e=>{ if(e.target===ol) closeModal(); });
+  // Focus sur le champ téléphone
+  setTimeout(()=>{ document.getElementById('voterPhone')?.focus(); }, 150);
 }
 
 function closeModal() { document.getElementById('theModal')?.remove(); }
-function doRefresh() { renderResults(); }
+
+function doRefresh() { renderResults(); showToast('info','📊 Résultats actualisés.'); }
+
+function doExport() {
+  const data={ exported_at:new Date().toISOString(), votes:getVotes(), transactions:getTxns(), candidates:CANDS };
+  const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
+  const url=URL.createObjectURL(blob), a=document.createElement('a');
+  a.href=url; a.download='supptic_votes_'+new Date().toISOString().slice(0,10)+'.json';
+  a.click(); URL.revokeObjectURL(url);
+  showToast('success','📥 Export téléchargé !');
+}
+
 function setFilter(role, btn) {
-  filter = role;
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  filter=role;
+  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
   renderCands();
 }
-function toggleHelpMenu() {
-  document.getElementById('helpMenu').classList.toggle('open');
-  document.getElementById('helpOverlay').classList.toggle('show');
+
+// ═══════════════════════════════════════════════════
+//  DATES DE VOTE
+// ═══════════════════════════════════════════════════
+const VOTE_CONFIG = { start:'2026-05-11T00:00:00', end:'2026-05-19T12:25:00', timezone:'Africa/Douala' };
+
+let _serverOffset=0, _syncOk=false;
+
+async function fetchServerTime() {
+  try {
+    const r=await fetch(`https://worldtimeapi.org/api/timezone/${VOTE_CONFIG.timezone}`);
+    const d=await r.json(); _serverOffset=d.unixtime*1000-Date.now(); _syncOk=true;
+  } catch(e) {
+    try {
+      const r=await fetch(`https://timeapi.io/api/time/current/zone?timeZone=${encodeURIComponent(VOTE_CONFIG.timezone)}`);
+      const d=await r.json(); _serverOffset=new Date(d.dateTime).getTime()-Date.now(); _syncOk=true;
+    } catch(e2) { _serverOffset=0; _syncOk=false; }
+  }
+  startVotingEngine();
 }
+
+function serverNow() { return Date.now()+_serverOffset; }
+function getVotingStatus() {
+  const now=serverNow(), s=new Date(VOTE_CONFIG.start).getTime(), e=new Date(VOTE_CONFIG.end).getTime();
+  if(now<s) return 'pending'; if(now>e) return 'closed'; return 'open';
+}
+function fmtDate(iso) {
+  return new Date(iso).toLocaleString('fr-FR',{day:'2-digit',month:'2-digit',year:'numeric',hour:'2-digit',minute:'2-digit',timeZone:VOTE_CONFIG.timezone});
+}
+function buildCountdown(targetMs) {
+  const diff=Math.max(0,targetMs-serverNow());
+  const pad=n=>String(n).padStart(2,'0');
+  const j=Math.floor(diff/86400000), h=Math.floor((diff%86400000)/3600000), m=Math.floor((diff%3600000)/60000), s=Math.floor((diff%60000)/1000);
+  return `<div class="countdown-grid"><div class="cd-block"><div class="cd-val">${pad(j)}</div><div class="cd-lbl">Jours</div></div><div class="cd-block"><div class="cd-val">${pad(h)}</div><div class="cd-lbl">Heures</div></div><div class="cd-block"><div class="cd-val">${pad(m)}</div><div class="cd-lbl">Min</div></div><div class="cd-block"><div class="cd-val">${pad(s)}</div><div class="cd-lbl">Sec</div></div></div>`;
+}
+function updateStatusBanner() {
+  const banner=document.getElementById('statusBanner'), status=getVotingStatus();
+  const start=new Date(VOTE_CONFIG.start).getTime(), end=new Date(VOTE_CONFIG.end).getTime();
+  const syncBadge=_syncOk?`<div class="sync-badge"><span class="sync-dot"></span>BONNE CHANCE</div>`:`<div class="sync-badge"><span class="sync-dot err"></span>mode hors ligne</div>`;
+  const dateRow=`<div class="status-date-row"><span>🟢 Début : ${fmtDate(VOTE_CONFIG.start)}</span><span>🔴 Fin : ${fmtDate(VOTE_CONFIG.end)}</span></div>`;
+  if (status==='pending') {
+    banner.className='status-banner status-pending';
+    banner.innerHTML=`<div class="status-icon">⏳</div><div class="status-title">Le vote n'a pas encore commencé</div><div class="status-sub">Ouverture dans :</div>${buildCountdown(start)}${dateRow}${syncBadge}`;
+    lockVoteButtons();
+  } else if (status==='open') {
+    banner.className='status-banner status-open';
+    banner.innerHTML=`<div class="status-icon">🗳️</div><div class="status-title">✅ Vote ouvert !</div><div class="status-sub">Fermeture dans :</div>${buildCountdown(end)}${dateRow}${syncBadge}`;
+    unlockVoteButtons();
+  } else {
+    banner.className='status-banner status-closed';
+    banner.innerHTML=`<div class="status-icon">🔒</div><div class="status-title">Vote terminé</div><div class="status-sub">Clôturé le ${fmtDate(VOTE_CONFIG.end)}</div>${dateRow}${syncBadge}`;
+    lockVoteButtons();
+  }
+}
+function lockVoteButtons()   { document.querySelectorAll('.btn-vote').forEach(b=>{ b.disabled=true; b.style.opacity='0.38'; b.style.cursor='not-allowed'; }); }
+function unlockVoteButtons() { document.querySelectorAll('.btn-vote').forEach(b=>{ b.disabled=false; b.style.opacity=''; b.style.cursor=''; }); }
+function startVotingEngine() { updateStatusBanner(); setInterval(updateStatusBanner, 1000); }
+
+// Guard: bloquer openModal si vote pas ouvert
+const _origOpenModal = openModal;
+openModal = function(id) {
+  if (getVotingStatus() !== 'open') {
+    showToast('error', getVotingStatus()==='pending' ? '⏳ Le vote n\'a pas encore commencé.' : '🔒 Le vote est terminé.');
+    return;
+  }
+  _origOpenModal(id);
+};
 
 // ═══════════════════════════════════════════════════
 //  CANVAS PARTICLES
 // ═══════════════════════════════════════════════════
-(function() {
-  const canvas = document.getElementById('canvas-bg'), ctx = canvas.getContext('2d');
-  let W, H;
-  function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
-  window.addEventListener('resize', resize);
-  resize();
-  const pts = Array.from({length:50}, () => ({ x: Math.random()*W, y: Math.random()*H, r: Math.random()*1.3+0.3, vx: (Math.random()-0.5)*0.25, vy: -(Math.random()*0.35+0.08), a: Math.random()*0.35+0.08, gold: Math.random()>0.45 }));
-  function draw() {
+(function(){
+  const canvas=document.getElementById('canvas-bg'), ctx=canvas.getContext('2d'); let W,H;
+  function resize(){W=canvas.width=window.innerWidth;H=canvas.height=window.innerHeight;}
+  window.addEventListener('resize',resize); resize();
+  const pts=Array.from({length:50},()=>({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.3+0.3,vx:(Math.random()-0.5)*0.25,vy:-(Math.random()*0.35+0.08),a:Math.random()*0.35+0.08,gold:Math.random()>0.45}));
+  function draw(){
     ctx.clearRect(0,0,W,H);
-    for(let p of pts) {
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
-      ctx.fillStyle = p.gold ? `rgba(212,175,55,${p.a})` : `rgba(180,180,255,${p.a*0.3})`;
-      ctx.fill();
-      p.x += p.vx;
-      p.y += p.vy;
-      if(p.y < -5) p.y = H+5;
-      if(p.x < -5) p.x = W+5;
-      if(p.x > W+5) p.x = -5;
-    }
+    for(let p of pts){ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=p.gold?`rgba(212,175,55,${p.a})`:`rgba(180,180,255,${p.a*0.3})`;ctx.fill();p.x+=p.vx;p.y+=p.vy;if(p.y<-5)p.y=H+5;if(p.x<-5)p.x=W+5;if(p.x>W+5)p.x=-5;}
     requestAnimationFrame(draw);
   }
   draw();
@@ -762,10 +1208,14 @@ function toggleHelpMenu() {
 // ═══════════════════════════════════════════════════
 //  INIT
 // ═══════════════════════════════════════════════════
-function init() {
+async function init() {
   initDB();
+  updateSyncStatus(false,'Chargement...');
+  await loadFromCloud();
   renderResults();
   renderCands();
+  setInterval(async()=>{ await loadFromCloud(); renderResults(); renderCands(); }, 10000);
+  fetchServerTime();
 }
 
 init();
