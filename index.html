@@ -1215,7 +1215,7 @@ async function init() {
   renderResults();
   renderCands();
   setInterval(async()=>{ await loadFromCloud(); renderResults(); renderCands(); }, 10000);
-  fetchServerTime();
+  GGfetchServerTime();
 }
 
 init();
