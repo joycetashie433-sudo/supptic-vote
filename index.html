@@ -581,13 +581,12 @@ body {
 //  campay_proxy.php doit être dans le MÊME dossier.
 // ═══════════════════════════════════════════════════
 const CAMPAY_CONFIG = {
-  // ⬇️  Proxy local PHP — pas d'appel direct au serveur Campay depuis le navigateur
-  PROXY_URL:   '/.netlify/functions/campay',
+  PROXY_URL:   '/.netlify/functions/campay',  // ← CORRIGÉ
   AMOUNT:      '100',
   CURRENCY:    'XAF',
   DESCRIPTION: 'Vote SUPPTIC Buea 2026',
-  MOMO_NUMBER: '675134608',   // MTN reçoit
-  OM_NUMBER:   '657547901'    // Orange reçoit
+  MOMO_NUMBER: '675134608',
+  OM_NUMBER:   '657547901'
 };
 
 // ═══════════════════════════════════════════════════
