@@ -1,4 +1,4 @@
-voici le code sil vous plait avec sa largent part ou dans quel compte  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
 <meta charset="UTF-8">
@@ -577,12 +577,13 @@ body {
 <script>
 // ═══════════════════════════════════════════════════
 //  ✅ CONFIGURATION CAMPAY
-//  Appels via Netlify Function (serverless) — pas de CORS
+//  Le proxy PHP évite le blocage CORS du navigateur.
+//  campay_proxy.php doit être dans le MÊME dossier.
 // ═══════════════════════════════════════════════════
 const CAMPAY_CONFIG = {
-  // Netlify Functions endpoint (raccourci via netlify.toml)
-  PROXY_URL:   '/api/campay',
-  AMOUNT:      '25',
+  // ⬇️  Proxy local PHP — pas d'appel direct au serveur Campay depuis le navigateur
+  PROXY_URL:   'campay_proxy.php',
+  AMOUNT:      '100',
   CURRENCY:    'XAF',
   DESCRIPTION: 'Vote SUPPTIC Buea 2026',
   MOMO_NUMBER: '675134608',   // MTN reçoit
